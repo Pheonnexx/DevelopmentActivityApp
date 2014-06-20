@@ -1,0 +1,2 @@
+module Mainpage::IndexHelper
+end
