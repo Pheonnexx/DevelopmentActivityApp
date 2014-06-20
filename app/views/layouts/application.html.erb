@@ -5,8 +5,29 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+<div id="top_nav_bar">
+
+  <% if user_signed_in? %>
+
+  	
+  <% else %>
+
+  	<%= link_to "Signup", new_user_registration_path, class: "nav_button" %>
+    
+  <% end %>
+
+</div>
+
 </head>
 <body>
+
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
 <%= yield %>
 
