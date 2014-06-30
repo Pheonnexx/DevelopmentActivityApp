@@ -1,3 +1,56 @@
 // Place all the styles related to the mainpage/index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import '_typography';
+@import '_colours';
+@import 'design-patterns/_buttons';
+@import 'design-patterns/_alpha-beta';
+@import '_grid_layout';
+
+h1 {
+	@include heading-80;
+	font-weight:bold;
+}
+
+h2 {
+	@include heading-48;
+	font-weight:bold;
+	border-bottom: solid $purple-50 10px
+}
+
+h2.subtitle {
+	font-weight:normal;
+	font-style:italic;
+	color: $secondary-text-colour;
+}
+
+form, input, select, textarea { 
+	@include core-19; 
+}
+
+.nav_button{
+  @include button;
+  @include core-19;
+}
+
+input:focus {
+outline: 3px solid #ffbf47;
+}
+
+.phase-banner  {
+  @include phase-banner(alpha);
+}
+
+.app_header {
+	padding:10px 0px;
+	border-bottom: solid $purple 10px
+}
+
+.outer-block {
+  @include outer-block;
+}
+
+.inner-block {
+  @include inner-block;
+}

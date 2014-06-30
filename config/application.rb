@@ -4,7 +4,10 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+#Bundler.require(:default, Rails.env)
+Bundler.require(:default, :assets, Rails.env) if defined?(Bundler)
+#Bundler.require(*Rails.groups(:assets => %w(development test))) if defined?(Bundler)
+
 
 module DevelopmentActivityApp
   class Application < Rails::Application
@@ -19,5 +22,13 @@ module DevelopmentActivityApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.assets.precompile += %w(
+  application.css
+  application-ie8.css
+  application-ie7.css
+  application-ie6.css
+  application.js
+)
   end
 end

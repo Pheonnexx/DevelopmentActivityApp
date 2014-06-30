@@ -23,3 +23,27 @@ Feature:  Sign up to the Development Activity App
 		And I enter the correct required information
 		And choose to submit the information
 		Then I am signed up successfully 
+
+	Scenario: When signing without a first name I am prevented from continuing
+		When I select to sign up
+		And I enter all information but the first name
+		When I choose to submit the information
+		Then I am prevented from signing up and a message tells me that my first name is missing
+
+	Scenario: When signing without a surname I am prevented from continuing
+		When I select to sign up
+		And I enter all information but the surname
+		When I choose to submit the information
+		Then I am prevented from signing up and a message tells me that my surname is missing
+
+	Scenario: When signing without an email I am prevented from continuing
+		When I select to sign up
+		And I enter all information but the emal
+		When I choose to submit the information
+		Then I am prevented from signing up and a message tells me that my email is missing
+
+	Scenario: When signing without a work group I am prevented from continuing
+		When I select to sign up 
+		And I enter all information but the work group
+		When I choose to submit the information
+		Then I am prevented from signing up and a message tells me that my work group is missing

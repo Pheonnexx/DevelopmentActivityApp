@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/alphagov/govuk_frontend_toolkit_gem.git
+  revision: 76ce516941e023ad9918eb89b530c12013472087
+  submodules: true
+  specs:
+    govuk_frontend_toolkit (1.4.0)
+      rails (>= 3.1.0)
+      sass (>= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -151,6 +160,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise
+  govuk_frontend_toolkit!
   jbuilder (~> 1.2)
   jquery-rails
   pg

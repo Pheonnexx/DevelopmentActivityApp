@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DevelopmentActivityApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+<div class="outer-block">
+  <div class="inner-block">
+    <div class='app_header'>
+      <header>
+        <title>DevelopmentActivityApp</title>
+        <%= stylesheet_link_tag "index" %>
+        <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <%= csrf_meta_tags %>
 
-<div id="top_nav_bar">
+      <div class="phase-banner">
+        <p>
+          <strong class="phase-tag">ALPHA</strong>
+          <span>This is a new service – your <a href="mailto:heather.poole@landregistry.gsi.gov.uk">feedback</a> will help us to improve it.</span>
+        </p>
+      </div>
 
-  <% if user_signed_in? %>
+      <div id="top_nav_bar">
 
-  	
-  <% else %>
+        <% if user_signed_in? %>
 
-  	<%= link_to "Signup", new_user_registration_path, class: "nav_button" %>
+  	      
+
+        <% else %>
+
+
+            <%= link_to('Login', new_user_session_path, class: "nav_button") %>
+
+            <%= link_to "Signup", new_user_registration_path, class: "nav_button" %>
+
     
-  <% end %>
+        <% end %>
 
-</div>
+      </div>
 
-</head>
-<body>
+      </header>
+    </div>
+  </div>
+    </div>
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+    <body>
 
-<%= yield %>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
-</body>
+    <%= yield %>
+
+    </body>
+
 </html>
