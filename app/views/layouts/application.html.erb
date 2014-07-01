@@ -3,7 +3,7 @@
 <div class="outer-block">
   <div class="inner-block">
     <div class='app_header'>
-      <header>
+      <head>
         <title>DevelopmentActivityApp</title>
         <%= stylesheet_link_tag "index" %>
         <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -21,26 +21,20 @@
 
         <% if user_signed_in? %>
 
-  	      
+            <%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "nav_button" %>  
 
         <% else %>
-
 
             <%= link_to('Login', new_user_session_path, class: "nav_button") %>
 
             <%= link_to "Signup", new_user_registration_path, class: "nav_button" %>
-
     
         <% end %>
 
       </div>
 
-      </header>
+      </head>
     </div>
-  </div>
-    </div>
-
-    <body>
 
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -48,9 +42,15 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+  </div>
+</div>
+    <body>
+
+
 
     <%= yield %>
 
     </body>
+
 
 </html>
