@@ -12,7 +12,7 @@ Feature: 	I want to log in
 		And select to login with that information
 		Then I log in successfully
 
-	Scenario: When I log in successfully I am sent to my Profile page
+	Scenario: When I log in successfully I am told I successfully logged in
 		Given that "Penelope" "Pitstop" has entered the correct login information
 		And selects to login
 		Then she is informed that she has signed in correctly
