@@ -1,0 +1,29 @@
+<div class="outer-block">
+  <div class="inner-block">
+
+	<h2>Dev Activity</h2>
+
+	<p>
+  		<strong>Activity Type:</strong>
+  		<%= @dev_activity.dev_type %>
+	</p>
+
+	<p>
+  		<strong>Completed On:</strong>
+  		<%= l @dev_activity.activity_completed_at if @dev_activity.activity_completed_at? %>
+	</p>
+
+	<p>
+  		<strong>Time Spent:</strong>
+  		<%= @dev_activity.time_taken %> hours
+	</p>
+
+	<p>
+  		<strong>Notes:</strong>
+  		<%= @dev_activity.notes %>
+	</p>
+
+	<%= link_to 'Edit', edit_dev_activity_path(@dev_activity), class: "nav_button" %> 
+
+  </div>
+</div>

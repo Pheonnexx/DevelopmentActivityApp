@@ -1,0 +1,38 @@
+<%= form_for([current_user, @dev_activity]) do |f| %>
+  
+  <% if @dev_activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dev_activity.errors.count, "error") %> prohibited this dev_activity from being saved:</h2>
+
+      <ul>
+      <% @dev_activity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+      
+  <div>
+    <%= f.label :dev_type, 'Development Type' %><br />
+    <%= f.text_field :dev_type, class: "form_field"  %>
+  </div>
+
+  <div>
+    <%= f.label :activity_completed_at, 'Date Completed' %><br />
+    <%= f.text_field :activity_completed_at, class: "form_field"  %>
+  </div>
+
+  <div>
+    <%= f.label :time_taken, 'Time Taken' %><br />
+    <%= f.text_field :time_taken, class: "form_field"  %>
+  </div>
+
+  <div>
+    <%= f.label :notes, 'Notes' %><br />
+    <%= f.text_field :notes, class: "form_field"  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create New Dev Activity", class: "nav_button"%>
+  </div>
+<% end %>

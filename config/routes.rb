@@ -1,5 +1,7 @@
 DevelopmentActivityApp::Application.routes.draw do
   
+  resources :dev_activities
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get "mainpage/index"
@@ -7,7 +9,9 @@ DevelopmentActivityApp::Application.routes.draw do
   root :to => "mainpage#index"
 
   devise_for :users
-  resources :users
+  resources :users do
+    resources :dev_activities
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
