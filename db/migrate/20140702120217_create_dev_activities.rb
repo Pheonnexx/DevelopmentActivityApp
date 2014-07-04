@@ -8,7 +8,7 @@ class CreateDevActivities < ActiveRecord::Migration
       t.text :notes
 
 
-      t.references :article, index: true
+      t.references :user, index: true
       t.timestamps
     end
   end

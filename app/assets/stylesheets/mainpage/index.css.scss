@@ -1,6 +1,7 @@
 // Place all the styles related to the mainpage/index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// All the imports are GDS styling
 
 @import '_typography';
 @import '_colours';
@@ -25,12 +26,33 @@ h2.subtitle {
 	color: $secondary-text-colour;
 }
 
+p {
+	@include core-19;
+}
+
+table {
+	@include core-19;
+	width:100%;
+}
+
+th {
+	font-weight:bold;
+	text-align:left;
+}
+
+td {
+	padding: 10px 0;     /* 10px top & bottom padding, 0px left & right */
+    border-width: 1px 0; /*  1px top & bottom border,  0px left & right */
+    border-color: #000;
+    border-style: solid;
+}
+
 form, input, select, textarea { 
 	@include core-19; 
 }
 
 .nav_button{
-  @include button;
+  @include button;   /* GDS button style */
   @include core-19;
 }
 

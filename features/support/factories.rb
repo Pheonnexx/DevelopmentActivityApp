@@ -20,5 +20,17 @@ FactoryGirl.define do
   	f.password_confirmation "password1"
   end
 
+end
+
+FactoryGirl.define do
+
+  factory :dev_activity do |f|
+    f.user_id "1"
+    f.id
+    f.dev_type "Book"
+    f.activity_completed_at "02/02/2012"
+    f.time_taken "2.0"
+    f.notes "notes"
+  end
 
 end

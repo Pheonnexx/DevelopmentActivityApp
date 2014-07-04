@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="outer-block">
+  <div class="inner-block">
+  	<h2>My Profile</h2>
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+	<p>
+  		<strong>Name:</strong>
+  		<%= @user.first_name %> <%= @user.surname %>
+	</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+	<p>
+  		<strong>Work Group:</strong>
+  		<%= @user.workgroup %>
+	</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<p>
+  		<strong>Email:</strong>
+  		<%= @user.email %>
+	</p>
+
+  <%= render 'dev_activities/user_dev_activities' %>
+
+  </div>
+</div>
