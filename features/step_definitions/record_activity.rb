@@ -22,7 +22,7 @@ Given(/^that "(.*?)" has chosen to record an activity$/) do |first_name|
 end
 
 Given(/^she records "(.*?)" as a development type$/) do |dev_type|
-  page.fill_in "Development Type", :with => dev_type
+  page.select dev_type, :from => "Development Type"
   @dev_type = dev_type
 end
 
