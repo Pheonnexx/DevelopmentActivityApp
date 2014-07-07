@@ -41,10 +41,14 @@ th {
 }
 
 td {
-	padding: 10px 0;     /* 10px top & bottom padding, 0px left & right */
-    border-width: 1px 0; /*  1px top & bottom border,  0px left & right */
+	padding: 5px 0;     /* 10px top & bottom padding, 0px left & right */
+    border-width: 1px 0 0 0; /*  1px top & bottom border,  0px left & right */
     border-color: #000;
     border-style: solid;
+}
+
+.form_field { 
+	@include core-19; 
 }
 
 form, input, select, textarea { 

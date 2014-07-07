@@ -1,6 +1,8 @@
 @US004
 
-Feature:	I want to view my own profile 
+Feature:	View own profile
+
+			I want to view my own profile 
 			So that I can see my own details
 
 			Acceptance Criteria:
@@ -21,4 +23,3 @@ Feature:	I want to view my own profile
 		And has created a dev activity for reading the "book" called "famous beheadings"
 		When he views his profile
 		Then he sees the dev activity for the book 
-		

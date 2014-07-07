@@ -1,3 +1,4 @@
+@US001
 Feature:  Sign up to the Development Activity App
 
 	I want to sign up to the app

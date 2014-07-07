@@ -69,11 +69,13 @@ class DevActivitiesController < ApplicationController
       @dev_activity = DevActivity.find(params[:id])
     end
 
+    #Finds the current user if needed
     def set_user
       @user = current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    #These are the allowed parameters for creating and amending a dev activity - these need to be expanded for any new ones.
     def dev_activity_params
       params.require(:dev_activity).permit(:user_id, :dev_type, :activity_completed_at, :time_taken, :notes)
     end

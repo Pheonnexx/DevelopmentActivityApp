@@ -1,5 +1,7 @@
 @US003
-Feature:  	I want to record my development activity 
+Feature:  	Record Development Activity
+
+			I want to record my development activity 
 			so that I look at what I have done
 
 	Acceptance Criteria:

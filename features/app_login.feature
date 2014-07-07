@@ -1,5 +1,7 @@
 @US002
-Feature: 	I want to log in 
+Feature: 	Logging in
+
+			I want to log in 
 			so i can record development activites against myself
 
 	Scenario: I am able to login from the mainpage

@@ -14,7 +14,7 @@
       
   <div>
     <%= f.label :dev_type, 'Development Type' %><br />
-    <%= f.text_field :dev_type, class: "form_field"  %>
+    <%= f.select(:dev_type, DevActivity::DEVELOPMENT_TYPE, :include_blank => true, :selected => ' ', class: 'form_field')  %>
   </div>
 
   <div>
@@ -24,7 +24,7 @@
 
   <div>
     <%= f.label :time_taken, 'Time Taken' %><br />
-    <%= f.text_field :time_taken, class: "form_field"  %>
+    <%= f.text_field :time_taken,  class: "form_field",  :placeholder => "Time in hours"  %>
   </div>
 
   <div>

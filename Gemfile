@@ -5,6 +5,11 @@ gem 'bundler'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+gem 'execjs'
+gem 'therubyracer'
+
+gem 'passenger'
+
 gem 'pg'
 
 # Use SCSS for stylesheets
@@ -16,6 +21,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# deployment
+gem 'capistrano'
+gem 'capistrano-ext'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -41,6 +49,7 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'factory_girl'
+  gem 'relish'
 end
 
 
