@@ -21,11 +21,14 @@
 
         <% if user_signed_in? %>
 
+
             <%= link_to('My Profile', user_path(current_user), class: "nav_button") %>
 
             <%= link_to('New Dev Activity', new_user_dev_activity_path(current_user), class: "nav_button") %>
 
-            <%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "nav_button" %>  
+            <div class="logout">
+                <%= button_to('Logout', destroy_user_session_path, method: :delete, class: "nav_button") %> 
+            </div>
 
         <% else %>
 

@@ -47,17 +47,13 @@ td {
     border-style: solid;
 }
 
+
 .form_field { 
 	@include core-19; 
 }
 
 form, input, select, textarea { 
 	@include core-19; 
-}
-
-.nav_button{
-  @include button;   /* GDS button style */
-  @include core-19;
 }
 
 input:focus {
@@ -68,9 +64,25 @@ outline: 3px solid #ffbf47;
   @include phase-banner(alpha);
 }
 
+.top_nav_bar {
+	position: relative;
+}
+
 .app_header {
 	padding:10px 0px;
-	border-bottom: solid $purple 10px
+	border-bottom: solid $purple 10px;
+}
+
+.nav_button{
+	position: absolute;
+  @include button;   /* GDS button style */
+  @include core-19;
+}
+
+.logout{
+	float: right;
+
+	left: auto;
 }
 
 .outer-block {

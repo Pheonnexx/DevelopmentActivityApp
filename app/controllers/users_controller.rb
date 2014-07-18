@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
+  # Creates the user - 
   def create
     @user = User.new(user_params)
 
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
+  # Updates the user with the allowed parameters - redirects to profile when updated successfully
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -53,6 +55,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   # DELETE /users/1.json
+  # Currently not in use - will change this to redirect to mainpage when utilised
   def destroy
     @user.destroy
     respond_to do |format|
@@ -63,11 +66,13 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    # Finds the user when an ID is provided
     def set_user
       @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # Any new parameters need to be added her as well as in the user controller to have them store correctly
     def user_params
       params.require(:user).permit(:first_name, :surname, :email, :workgroup)
     end

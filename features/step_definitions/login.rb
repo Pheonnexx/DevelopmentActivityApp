@@ -46,11 +46,11 @@ Given(/^that I am logged in$/) do
 end
 
 Then(/^I am given the opportunity to logout$/) do
-  assert page.has_link?('Logout')
+  assert page.has_button?('Logout')
 end
 
 When(/^I select to logout$/) do
-  page.click_link('Logout')
+  page.click_button('Logout')
 end
 
 Then(/^I am returned to the mainpage$/) do

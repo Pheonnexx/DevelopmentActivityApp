@@ -1,3 +1,5 @@
+
+
 Given(/^that "(.*?)" is logged in$/) do |first_name|
   @user = FactoryGirl.create(:user, :first_name => first_name)
   login
