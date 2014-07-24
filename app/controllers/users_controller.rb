@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    # Any new parameters need to be added her as well as in the user controller to have them store correctly
+    # Any new parameters need to be added here as well as in the user controller to have them store correctly
     def user_params
       params.require(:user).permit(:first_name, :surname, :email, :workgroup)
     end

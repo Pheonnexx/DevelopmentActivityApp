@@ -1,6 +1,7 @@
 @US002
 Feature: 	Logging in
-
+			
+			As a User
 			I want to log in 
 			so i can record development activites against myself
 

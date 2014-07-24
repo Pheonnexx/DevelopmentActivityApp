@@ -1,6 +1,7 @@
 @US001
 Feature:  Sign up to the Development Activity App
-
+	
+	As a User
 	I want to sign up to the app
 	So that I can log in and record activities under my profile
 

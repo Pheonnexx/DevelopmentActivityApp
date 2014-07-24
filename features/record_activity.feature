@@ -1,6 +1,7 @@
 @US003
 Feature:  	Record Development Activity
 
+			As a User
 			I want to record my development activity 
 			so that I look at what I have done
 

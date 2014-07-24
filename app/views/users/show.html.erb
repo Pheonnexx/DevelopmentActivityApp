@@ -1,3 +1,5 @@
+<%#This displays the user profile %>
+
 <div class="outer-block">
   <div class="inner-block">
   	<h2>My Profile</h2>
@@ -16,6 +18,8 @@
   		<strong>Email:</strong>
   		<%= @user.email %>
 	</p>
+
+  <%#This displays the users dev activities they have recorded %>
 
   <%= render 'dev_activities/user_dev_activities' %>
 

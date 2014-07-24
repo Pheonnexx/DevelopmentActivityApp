@@ -57,3 +57,34 @@ Then(/^the activity is displayed to her$/) do
   assert page.has_content?(@activity_duration)
   assert page.has_content?(@activity_notes)
 end
+
+Given(/^that I have logged in as "(.*?)"$/) do |first_name|
+  @user = FactoryGirl.create(:user, :first_name => first_name)
+  login
+end
+
+When(/^I add a development activity$/) do
+  create_dev_activity
+end
+
+When(/^I enter "(.*?)"$/) do |key_learning_point|
+  page.fill_in "Key Learning Points", :with => key_learning_point
+  @key_learning_point = key_learning_point
+end
+
+When(/^I select to save the development activity$/) do
+  page.click_button('Create New Dev Activity')
+end
+
+Then(/^the key learning point is displayed as part of the development activity$/) do
+  assert page.has_content?(@key_learning_point)
+end
+
+When(/^I add a development activity without a key learning point$/) do
+  create_dev_activity
+end
+
+Then(/^the development activity is displayed without a key learning point$/) do
+  assert page.has_content?('Key Learning Points:')
+end
+

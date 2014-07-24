@@ -2,6 +2,7 @@
 
 Feature:	View own profile
 
+			As a User
 			I want to view my own profile 
 			So that I can see my own details
 

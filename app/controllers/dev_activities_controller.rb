@@ -25,6 +25,7 @@ class DevActivitiesController < ApplicationController
 
   # POST /dev_activities
   # POST /dev_activities.json
+  #Uses the current user that is logged in and creates a dev activity that belongs to them
   def create
     @dev_activity = current_user.dev_activities.create(dev_activity_params)
 
@@ -77,6 +78,6 @@ class DevActivitiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     #These are the allowed parameters for creating and amending a dev activity - these need to be expanded for any new ones.
     def dev_activity_params
-      params.require(:dev_activity).permit(:user_id, :dev_type, :activity_completed_at, :time_taken, :notes)
+      params.require(:dev_activity).permit(:user_id, :dev_type, :activity_completed_at, :time_taken, :notes, :key_learning_point)
     end
 end

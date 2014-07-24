@@ -1,3 +1,5 @@
+<%#This is the header that displays across the entire application %>
+
 <!DOCTYPE html>
 <html>
 <div class="outer-block">
@@ -5,11 +7,13 @@
     <div class='app_header'>
       <head>
         <title>DevelopmentActivityApp</title>
+        <%#This links all the stylesheets, these affect the whole app %>
         <%= stylesheet_link_tag "index" %>
         <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
         <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
         <%= csrf_meta_tags %>
 
+      <%#This is the alpha header - to be changed or deleted according to the stage of the project %>
       <div class="phase-banner">
         <p>
           <strong class="phase-tag">ALPHA</strong>
@@ -17,6 +21,7 @@
         </p>
       </div>
 
+      <%#This is the toolbar which is contained in the header - when signed in my profile, new dev activity and logout are displayed when the user is not currently logged in they are displayed the login and signup button %>
       <div id="top_nav_bar">
 
         <% if user_signed_in? %>
@@ -43,6 +48,7 @@
       </head>
     </div>
 
+<%#This is where all the successful and unsuccessful alerts are displayed %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -53,11 +59,8 @@
 </div>
     <body>
 
-
-
     <%= yield %>
 
     </body>
-
 
 </html>

@@ -1,27 +1,31 @@
-
+<%# This page is for viewing seperate Dev Activities %>
 <div class="outer-block">
   <div class="inner-block">
 
 	<h2>Dev Activity</h2>
 
 	<p>
-  		<strong>Activity Type: </strong>
-  		<%= @dev_activity.dev_type %>
+  	<strong>Activity Type: </strong>
+  	<%= @dev_activity.dev_type %>
 	</p>
 
 	<p>
-  		<strong>Completed On:</strong>
-  		<%= l @dev_activity.activity_completed_at if @dev_activity.activity_completed_at? %>
+  	<strong>Completed On:</strong>
+  	<%= l @dev_activity.activity_completed_at if @dev_activity.activity_completed_at? %>
 	</p>
 
 	<p>
-  		<strong>Time Spent:</strong>
-  		<%= @dev_activity.time_taken %> hours
+  	<strong>Time Spent:</strong>
+  	<%= @dev_activity.time_taken %> hours
 	</p>
 
+  <p>
+    <strong>Key Learning Points:</strong>
+    <%= @dev_activity.key_learning_point %>
+
 	<p>
-  		<strong>Notes:</strong>
-  		<%= @dev_activity.notes %>
+  	<strong>Notes:</strong>
+  	<%= @dev_activity.notes %>
 	</p>
 
   </div>

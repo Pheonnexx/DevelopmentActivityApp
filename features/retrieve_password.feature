@@ -1,6 +1,8 @@
 @US005
 
-Feature: 	As a user
+Feature:	Password Retrieval 	
+
+			As a user
 			I want to to be able to retrieve my password
 			So that I can access the system again if I forget it.
 
