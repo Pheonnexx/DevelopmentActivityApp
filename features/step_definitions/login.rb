@@ -57,3 +57,63 @@ Then(/^I am returned to the mainpage$/) do
   assert page.has_content?('Dev Activity App')
   assert page.has_link?('Login')
 end
+
+Given(/^that I have an account for the development activity app$/) do
+  @user = FactoryGirl.create(:user, :email => "pheonn@hotmail.co.uk")
+end
+
+When(/^I select to "(.*?)"$/) do |button|
+  visit_mainpage
+  page.click_link(button)
+end
+
+Then(/^I am provided the option to retrieve my password$/) do
+  page.has_link?('Forgot your password?')
+end
+
+Given(/^that I have an account with the email "(.*?)"$/) do |email|
+  @user1 = FactoryGirl.create(:user, :email => email)
+end
+
+When(/^I select the option to retrieve my password$/) do
+  visit_mainpage
+  page.click_link('Login')
+  page.click_link('Forgot your password?')
+end
+
+When(/^enter my email$/) do
+  page.fill_in "Email", :with => @user1.email
+end
+
+When(/^I select to retrieve my password$/) do
+  page.click_button('Send me reset password instructions')
+end
+
+Then(/^a password retrieval email is sent$/) do
+  @email = ActionMailer::Base.deliveries.last
+  @email.to.should include @user1.email
+end
+
+Given(/^I have selected the option to retrieve my password$/) do
+  visit_mainpage
+  page.click_link('Login')
+  page.click_link('Forgot your password?')
+  page.fill_in "Email", :with => @user1.email
+  page.click_button('Send me reset password instructions')
+end
+
+When(/^I enter the new password of "(.*?)" and confirm it$/) do |password|
+  token = extract_token_from_email(:reset_password)
+  visit edit_user_password_path(reset_password_token: token)
+  page.fill_in "New password", :with => password
+  page.fill_in "Confirm new password", :with => password
+end
+
+When(/^I select to submit my new password$/) do
+  page.click_button('Change my password')
+end
+
+Then(/^I am signed in successfully with the new password$/) do
+  assert page.has_content?('Your password was changed successfully. You are now signed in.')
+end
+

@@ -31,4 +31,7 @@ module DevelopmentActivityApp
   application.js
 )
   end
+
+  MANDRILL_API_KEY="yjShnNrgVOxY6MuEQqBnIg"
+MANDRILL_USERNAME="pheonn@hotmail.co.uk" 
 end

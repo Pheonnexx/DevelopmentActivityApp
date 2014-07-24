@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'bundler'
 
+#email
+gem 'mandrill-api'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -44,12 +47,18 @@ group :assets do
 end
 
 group :test do
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem 'capybara'
   gem 'factory_girl'
   gem 'relish'
+end
+
+group :development, :test do
+gem 'foreman'
 end
 
 

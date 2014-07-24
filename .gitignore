@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#personal information to get email working temporarily
+/Procfile
+/.env
