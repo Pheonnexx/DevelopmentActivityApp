@@ -1,6 +1,6 @@
 DevelopmentActivityApp::Application.configure do
 
-  config.action_mailer.default_url_options = { :host => '192.168.4.100' }
+  config.action_mailer.default_url_options = { :host => 'localhost:80' }
   config.action_mailer.delivery_method = :smtp
   # change to true to allow email to be sent during development
   config.action_mailer.perform_deliveries = true
@@ -14,7 +14,7 @@ DevelopmentActivityApp::Application.configure do
     :user_name => "pheonn@hotmail.co.uk",
     :password  => "yjShnNrgVOxY6MuEQqBnIg", # SMTP password is any valid API key
     :authentication => 'plain', # Mandrill supports 'plain' or 'login'
-    :domain => '192.168.4.100', # your domain to identify your server when connecting
+    :domain => 'localhost', # your domain to identify your server when connecting
   }
 
   # Settings specified here will take precedence over those in config/application.rb.
