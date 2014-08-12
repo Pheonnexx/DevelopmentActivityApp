@@ -11,7 +11,17 @@
     </div>
   <% end %>
 
+  <div>
+    <%= f.label :role_name, 'Role Name' %><br />
+    <%= f.text_field :role_name, class: "form_field"  %>
+  </div>
+
+    <div>
+    <%= f.label :role_description, 'Role Description' %><br />
+    <%= f.text_field :role_description, class: "form_field"  %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create Role', class: "nav_button" %>
   </div>
 <% end %>

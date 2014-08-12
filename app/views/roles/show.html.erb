@@ -1,4 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="outer-block">
+  <div class="inner-block">
 
-<%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back', roles_path %>
+	<h2>Job Role</h2>
+
+	<p>
+  		<strong>Job Role: </strong>
+  		<%= @role.role_name %>
+	</p>
+
+	<p>
+  		<strong>Role Description: </strong>
+  		<%= @role.role_description %>
+	</p>
+
+  </div>
+</div>
+
