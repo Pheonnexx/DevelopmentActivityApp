@@ -3,4 +3,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+
+
 DevelopmentActivityApp::Application.load_tasks

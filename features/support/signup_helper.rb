@@ -19,7 +19,8 @@ module SignupHelper
   end 
 
   def login_generic_user
-  	@user = FactoryGirl.create(:user)
+    @role = FactoryGirl.create(:role)
+  	@user = FactoryGirl.create(:user, :role_id => @role.id)
   	login
   end
 

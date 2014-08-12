@@ -55,6 +55,7 @@ group :test do
   gem 'capybara'
   gem 'factory_girl'
   gem 'relish'
+  gem 'seed-fu', '~> 2.3'
 end
 
 group :development, :test do

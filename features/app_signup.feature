@@ -11,6 +11,10 @@ Feature:  Sign up to the Development Activity App
 		 - First and Second Name
 		 - email address
 		 - work group 
+		 These are requested but not necessary:
+		 - Job Grade
+		 - Location
+		 - Team
 		The same email address cannot be used more than once
 
 
@@ -49,3 +53,21 @@ Feature:  Sign up to the Development Activity App
 		And I enter all information but the work group
 		When I choose to submit the information
 		Then I am prevented from signing up and a message tells me that my work group is missing
+
+	Scenario: When signing without a job grade I am prevented from continuing
+		When I select to sign up 
+		And I enter all information but the job grade
+		When I choose to submit the information
+		Then I am signed in 
+
+	Scenario: When signing without a location I am prevented from continuing
+		When I select to sign up 
+		And I enter all information but the location
+		When I choose to submit the information
+		Then I am signed in
+
+	Scenario: When signing without a team I am prevented from continuing
+		When I select to sign up 
+		And I enter all information but the team
+		When I choose to submit the information
+		Then I am signed in 

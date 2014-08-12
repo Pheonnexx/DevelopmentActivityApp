@@ -26,6 +26,14 @@
   </div>
 
   <div>
+    <% #f.date_select :activity_completed_at, {:order => [:month, :day, :year],:prompt => true, :start_year => Time.now.year, :end_year => 2016} %>
+  </div>
+
+  <div>
+    <% #date_field("dev_activity", "activity_completed_at") %>
+  </div>
+
+  <div>
     <%= f.label :time_taken, 'Time Taken' %><br />
     <%= f.text_field :time_taken,  class: "form_field",  :placeholder => "Time in hours"  %>
   </div>

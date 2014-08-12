@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724084721) do
+ActiveRecord::Schema.define(version: 20140806131521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,29 @@ ActiveRecord::Schema.define(version: 20140724084721) do
 
   add_index "dev_activities", ["user_id"], name: "index_dev_activities_on_user_id", using: :btree
 
+  create_table "roles", force: true do |t|
+    t.string   "role_name",        null: false
+    t.string   "role_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "skills", force: true do |t|
+    t.string   "skill_name", null: false
+    t.string   "skill_code"
+    t.string   "skill_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_skills", force: true do |t|
+    t.integer  "skill_id",    null: false
+    t.integer  "user_id",     null: false
+    t.string   "skill_level", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "first_name",                          null: false
     t.datetime "created_at"
@@ -45,9 +68,16 @@ ActiveRecord::Schema.define(version: 20140724084721) do
     t.string   "last_sign_in_ip"
     t.string   "surname",                             null: false
     t.string   "workgroup",                           null: false
+    t.string   "job_grade"
+    t.string   "location"
+    t.string   "team"
+    t.string   "password_temp"
+    t.boolean  "admin"
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
 end

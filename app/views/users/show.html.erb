@@ -4,24 +4,33 @@
   <div class="inner-block">
   	<h2>My Profile</h2>
 
-	<p>
+    <%= link_to "My Skills", user_user_skills_path(current_user), class: "nav_button" %>
+
+	  <p>
   		<strong>Name:</strong>
   		<%= @user.first_name %> <%= @user.surname %>
-	</p>
+	  </p>
 
-	<p>
+    <p>
+      <strong>Job Role:</strong>
+      <%= @user.role.role_name if @user.role.role_name?  %>
+    </p>
+
+	  <p>
   		<strong>Work Group:</strong>
   		<%= @user.workgroup %>
-	</p>
+	  </p>
 
-	<p>
+	  <p>
   		<strong>Email:</strong>
   		<%= @user.email %>
-	</p>
+	  </p>
 
-  <%#This displays the users dev activities they have recorded %>
+    <%= link_to "Edit Profile or Change Password", edit_user_registration_path, class: "nav_button" %>
 
-  <%= render 'dev_activities/user_dev_activities' %>
+    <%#This displays the users dev activities they have recorded %>
+
+    <%= render 'dev_activities/user_dev_activities' %>
 
   </div>
 </div>

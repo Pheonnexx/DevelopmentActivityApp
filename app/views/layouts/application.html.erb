@@ -23,16 +23,24 @@
 
       <%#This is the toolbar which is contained in the header - when signed in my profile, new dev activity and logout are displayed when the user is not currently logged in they are displayed the login and signup button %>
       <div id="top_nav_bar">
-
+          
         <% if user_signed_in? %>
 
 
-            <%= link_to('My Profile', user_path(current_user), class: "nav_button") %>
+          <%= link_to('My Profile', user_path(current_user), class: "nav_button") %>
 
             <%= link_to('New Dev Activity', new_user_dev_activity_path(current_user), class: "nav_button") %>
 
+            <%= link_to('Add Skill', new_user_user_skill_path(current_user), class: "nav_button") %>
+
+            <% if current_user.admin? %>
+
+              <%= link_to('Admin Dashboard', pages_AdminDashboard_path, class: "nav_button") %>
+
+
+            <% end %>
             <div class="logout">
-                <%= button_to('Logout', destroy_user_session_path, method: :delete, class: "nav_button") %> 
+                <%= button_to('Logout', destroy_user_session_path, method: :delete, class: "nav_button") %>
             </div>
 
         <% else %>

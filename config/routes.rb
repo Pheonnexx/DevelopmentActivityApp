@@ -1,5 +1,10 @@
 DevelopmentActivityApp::Application.routes.draw do
-  
+
+  resources :roles
+
+  get "pages/AdminDashboard"
+  resources :skills
+
   resources :dev_activities
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -11,6 +16,7 @@ DevelopmentActivityApp::Application.routes.draw do
   devise_for :users
   resources :users do
     resources :dev_activities
+    resources :user_skills
   end
 
   # Example of regular route:

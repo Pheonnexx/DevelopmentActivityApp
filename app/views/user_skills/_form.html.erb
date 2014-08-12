@@ -1,0 +1,29 @@
+<%= form_for([current_user, @user_skill]) do |f| %>
+  <% if @user_skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_skill.errors.count, "error") %> prohibited this user_skill from being saved:</h2>
+
+      <ul>
+      <% @user_skill.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :skill_name, 'Skill Name' %><br />
+    <%= select("user_skill", "skill_id", Skill.all.collect {|p| [p.skill_name, p.id]}, {:include_blank => false}) %>
+  </div>
+
+  <div>
+    <%= f.label :skill_level, 'Skill Level' %><br />
+    <%= f.select(:skill_level, UserSkill::SKILL_LEVEL, :include_blank => true, :selected => ' ', class: 'form_field')  %>
+  </div>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <div class="actions">
+    <%= f.submit "Add Skill", class: "nav_button" %>
+  </div>
+<% end %>

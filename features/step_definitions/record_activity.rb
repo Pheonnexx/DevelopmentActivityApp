@@ -1,7 +1,8 @@
 
 
 Given(/^that "(.*?)" is logged in$/) do |first_name|
-  @user = FactoryGirl.create(:user, :first_name => first_name)
+  @role = FactoryGirl.create(:role)
+  @user = FactoryGirl.create(:user, :first_name => first_name, :role_id => @role.id)
   login
 end
 
@@ -18,7 +19,8 @@ Then(/^she is directed to record development activity section$/) do
 end
 
 Given(/^that "(.*?)" has chosen to record an activity$/) do |first_name|
-  @user = FactoryGirl.create(:user, :first_name => first_name)
+  @role = FactoryGirl.create(:role)
+  @user = FactoryGirl.create(:user, :first_name => first_name, :role_id => @role.id)
   login
   page.click_link('New Dev Activity')
 end
@@ -59,7 +61,8 @@ Then(/^the activity is displayed to her$/) do
 end
 
 Given(/^that I have logged in as "(.*?)"$/) do |first_name|
-  @user = FactoryGirl.create(:user, :first_name => first_name)
+  @role = FactoryGirl.create(:role)
+  @user = FactoryGirl.create(:user, :first_name => first_name, :role_id => @role.id)
   login
 end
 

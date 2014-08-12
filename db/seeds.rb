@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+users = User.create!([{ id: '1234', first_name: 'Super', surname: 'User', email: 'superuser1@gmail.com', password: '!superuser1', password_confirmation: '!superuser1', workgroup: 'testing', admin: 'true'}])
+
+#skills = Skill.create([{ skill_name: 'MS Excel', skill_code: 'SOSK', skill_type: 'Non Technical IT Skill' }])
+
+roles = Role.create([{ id: '1234', role_name: 'Testing', role_description: 'Quality Assurance' }])

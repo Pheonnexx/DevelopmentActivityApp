@@ -6,7 +6,7 @@ body {
   line-height: 18px;
 }
 
-ol, ul {
+ol {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -62,8 +62,5 @@ div {
     background-color: #c00;
     color: #fff;
   }
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
+
 }

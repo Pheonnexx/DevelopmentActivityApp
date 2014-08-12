@@ -7,7 +7,8 @@ Then(/^I am given the opportunity to login$/) do
 end
 
 Given(/^that I select to log in$/) do
-  @user = FactoryGirl.create(:user)
+  @role = FactoryGirl.create(:role)
+  @user = FactoryGirl.create(:user, :role_id => @role.id)
 end
 
 When(/^I enter a correct email and password$/) do
@@ -34,7 +35,8 @@ Then(/^she is informed that she has signed in correctly$/) do
 end
 
 Given(/^that "(.*?)" "(.*?)" has entered the correct login information$/) do |first_name, surname|
-  @user = FactoryGirl.create(:user, :first_name => first_name, :surname => surname)
+  @role = FactoryGirl.create(:role)
+  @user = FactoryGirl.create(:user, :first_name => first_name, :surname => surname, :role_id => @role.id)
   visit_mainpage
   page.click_link('Login')
   page.fill_in "Email", :with => @user.email
@@ -59,7 +61,8 @@ Then(/^I am returned to the mainpage$/) do
 end
 
 Given(/^that I have an account for the development activity app$/) do
-  @user = FactoryGirl.create(:user, :email => "pheonn@hotmail.co.uk")
+  @role = FactoryGirl.create(:role)
+  @user = FactoryGirl.create(:user, :email => "pheonn@hotmail.co.uk", :role_id => @role.id)
 end
 
 When(/^I select to "(.*?)"$/) do |button|
@@ -72,7 +75,8 @@ Then(/^I am provided the option to retrieve my password$/) do
 end
 
 Given(/^that I have an account with the email "(.*?)"$/) do |email|
-  @user1 = FactoryGirl.create(:user, :email => email)
+  @role = FactoryGirl.create(:role)
+  @user1 = FactoryGirl.create(:user, :email => email, :role_id => @role.id)
 end
 
 When(/^I select the option to retrieve my password$/) do
@@ -105,7 +109,7 @@ end
 When(/^I enter the new password of "(.*?)" and confirm it$/) do |password|
   token = extract_token_from_email(:reset_password)
   visit edit_user_password_path(reset_password_token: token)
-  page.fill_in "New password", :with => password
+  page.fill_in "New Password", :with => password
   page.fill_in "Confirm new password", :with => password
 end
 

@@ -1,0 +1,1 @@
+users = User.create([{ first_name: 'Mary Jane', surname: 'Watson', email: 'pheonn1@gmail.com',	password: 'heather4', password_confirmation: 'heather4', workgroup: 'test'}])

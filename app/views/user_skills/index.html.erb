@@ -1,0 +1,28 @@
+<div class="outer-block">
+  <div class="inner-block">
+
+    <h2>Your Skills</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Skill Name</th>
+          <th>Skill Level</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @user.user_skills.each do |user_skill| %>
+          <tr>
+
+            <td><%= user_skill.skill.skill_name %></td>
+
+            <td><%= user_skill.skill_level %></td>
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

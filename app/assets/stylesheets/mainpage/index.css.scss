@@ -57,7 +57,7 @@ form, input, select, textarea {
 }
 
 input:focus {
-outline: 3px solid #ffbf47;
+	outline: 3px solid #ffbf47;
 }
 
 .phase-banner  {
@@ -66,6 +66,13 @@ outline: 3px solid #ffbf47;
 
 .top_nav_bar {
 	position: relative;
+}
+
+ul li {
+  padding: 0px;
+  position: relative;
+  list-style: none;
+  display: inline;
 }
 
 .app_header {
@@ -79,9 +86,15 @@ outline: 3px solid #ffbf47;
   @include core-19;
 }
 
+.password_change{
+	border-style: solid;
+    border-width: 0px;
+}
+
 .logout{
 	float: right;
 	left: auto;
+	top: auto;
 }
 
 .outer-block {

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :find_skills, only: [:show, :destroy]
+  before_action :find_roles, only: [:show, :create, :edit, :index]
 
   # GET /users
   # GET /users.json
@@ -10,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    find_roles
   end
 
   # GET /users/new
@@ -71,9 +74,19 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
+    def find_skills
+      @user = User.find(params[:id])
+      @user_skill = UserSkill.where("user_id = @user.id")
+    end
+
+    def find_roles
+      @user = User.find(params[:id])
+      @role = Role.where("id = @user.role_id")
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     # Any new parameters need to be added here as well as in the user controller to have them store correctly
     def user_params
-      params.require(:user).permit(:first_name, :surname, :email, :workgroup)
+      params.require(:user).permit(:first_name, :surname, :email, :workgroup, :role_id, :job_grade, :location, :team, :admin)
     end
 end
