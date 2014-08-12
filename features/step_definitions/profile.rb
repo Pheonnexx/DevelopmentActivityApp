@@ -160,7 +160,7 @@ Then(/^enter my current password incorrectly$/) do
 end
 
 Then(/^I am displayed an error concerning an incorrect password$/) do
-  assert page.has_text?("Password confirmation doesn't match Password")
+  assert page.has_text?("Current password is invalid")
 end
 
 When(/^I enter a new password I confirm it incorrectly$/) do
