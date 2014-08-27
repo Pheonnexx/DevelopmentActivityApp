@@ -15,6 +15,15 @@ Around('@email') do |scenario, block|
   block.call
 end
 
+
+Capybara.javascript_driver = :webkit
+
+Capybara.register_driver :chrome do |app|
+ Capybara::Webkit::Driver.new(app, :browser => :chrome)
+end
+
+Capybara.current_driver = :chrome
+
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
@@ -43,6 +52,10 @@ begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+end
+
+Capybara.add_selector(:row) do
+  xpath { |num| ".//tbody/tr[contains(.,#{num}])" }
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.

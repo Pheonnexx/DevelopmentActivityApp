@@ -8,9 +8,9 @@
       <head>
         <title>DevelopmentActivityApp</title>
         <%#This links all the stylesheets, these affect the whole app %>
-        <%= stylesheet_link_tag "index" %>
-        <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+ 
+        <%= stylesheet_link_tag    "application" %>
+        <%= javascript_include_tag "application" %>
         <%= csrf_meta_tags %>
 
       <%#This is the alpha header - to be changed or deleted according to the stage of the project %>
@@ -26,12 +26,7 @@
           
         <% if user_signed_in? %>
 
-
           <%= link_to('My Profile', user_path(current_user), class: "nav_button") %>
-
-            <%= link_to('New Dev Activity', new_user_dev_activity_path(current_user), class: "nav_button") %>
-
-            <%= link_to('Add Skill', new_user_user_skill_path(current_user), class: "nav_button") %>
 
             <% if current_user.admin? %>
 

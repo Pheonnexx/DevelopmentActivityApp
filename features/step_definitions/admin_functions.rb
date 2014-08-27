@@ -9,11 +9,13 @@ Given(/^I have gone to the admin dashboard$/) do
 end
 
 Then(/^I am given the option to Add a New Skill$/) do
+  page.click_link('Manage Skills')
   assert page.has_link?('Add New Skill')
 end
 
 Given(/^I have selected to create a new skill$/) do
   page.click_link('Admin Dashboard')
+  page.click_link('Manage Skills')
   page.click_link('Add New Skill')
 end
 

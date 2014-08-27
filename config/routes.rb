@@ -1,6 +1,10 @@
 DevelopmentActivityApp::Application.routes.draw do
 
-  resources :roles
+  resources :role_skills
+
+  resources :roles do 
+    resources :role_skills
+  end
 
   get "pages/AdminDashboard"
   resources :skills
@@ -16,6 +20,9 @@ DevelopmentActivityApp::Application.routes.draw do
   devise_for :users
   resources :users do
     resources :dev_activities
+      collection do
+        get 'user_dev_activities'
+      end
     resources :user_skills
   end
 

@@ -28,6 +28,10 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+#for help with the forms
+gem 'cocoon'
+gem 'simple_form'
+
 # deployment
 gem 'capistrano'
 gem 'capistrano-ext'
@@ -39,6 +43,7 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -60,6 +65,9 @@ group :test do
   gem 'factory_girl'
   gem 'relish'
   gem 'seed-fu', '~> 2.3'
+  gem 'selenium-webdriver'
+  gem 'pry'
+  gem 'capybara-webkit'
 end
 
 group :development, :test do

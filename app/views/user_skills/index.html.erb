@@ -2,6 +2,11 @@
   <div class="inner-block">
 
     <h2>Your Skills</h2>
+    <p>
+      <%= link_to('Add Skill', new_user_user_skill_path(current_user), class: "nav_button") %> 
+
+      <%= link_to "My Development Activities", user_dev_activities_users_path(current_user), class: "nav_button" %>
+    </p>
 
     <table>
       <thead>

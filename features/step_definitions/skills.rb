@@ -1,8 +1,12 @@
 Then(/^I am given the option to select a skill to add to my profile$/) do
+  page.click_link('My Profile')
+  page.click_link('My Skills')
   assert page.has_link?('Add Skill')
 end
 
 Given(/^I have selected to add a skill$/) do
+  page.click_link('My Profile')
+  page.click_link('My Skills')
   @skill = FactoryGirl.create(:skill, :skill_name => 'MS Word')
   page.click_link('Add Skill')
 end
@@ -17,7 +21,7 @@ When(/^I select the skill level of '(\d+)'$/) do |skill_level|
 end
 
 When(/^I select to save$/) do
-  page.click_button('Add Skill')
+  page.click_button('Confirm')
 end
 
 Then(/^I am returned to my profile with a successful save message$/) do

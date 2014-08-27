@@ -15,10 +15,13 @@ class RolesController < ApplicationController
   # GET /roles/new
   def new
     @role = Role.new
+    @role.role_skills.build 
+  
   end
 
   # GET /roles/1/edit
   def edit
+
   end
 
   # POST /roles
@@ -69,6 +72,6 @@ class RolesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def role_params
-      params.require(:role).permit(:role_name, :role_description)
+      params.require(:role).permit(:role_name, :role_description, role_skills_attributes: [:id, :role_id, :skill_id, :_destroy] )
     end
 end

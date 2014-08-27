@@ -8,11 +8,13 @@
 // compiled file.
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
+// about supported directives.  I have removed require turbolinks
 //
-//=require govuk_toolkit
+//= require govuk_toolkit
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
+
+//= require cocoon
 //= require_tree .
 

@@ -13,6 +13,12 @@
   		<%= @role.role_description %>
 	</p>
 
+	<% for role_skill in @role.role_skills %>
+
+	<li> <%= role_skill.skill.skill_name %> </li>
+
+	<% end %>
+
   </div>
 </div>
 

@@ -75,3 +75,13 @@ FactoryGirl.define do
   end
 
 end
+
+FactoryGirl.define do
+
+  factory :role_skill do |f|
+    f.id
+    f.role_id "1"
+    f.skill_id "1"
+  end
+
+end

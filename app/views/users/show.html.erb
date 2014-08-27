@@ -2,9 +2,8 @@
 
 <div class="outer-block">
   <div class="inner-block">
-  	<h2>My Profile</h2>
 
-    <%= link_to "My Skills", user_user_skills_path(current_user), class: "nav_button" %>
+  	<h2>My Profile</h2>
 
 	  <p>
   		<strong>Name:</strong>
@@ -28,9 +27,9 @@
 
     <%= link_to "Edit Profile or Change Password", edit_user_registration_path, class: "nav_button" %>
 
-    <%#This displays the users dev activities they have recorded %>
+    <%= link_to "My Skills", user_user_skills_path(current_user), class: "nav_button" %>
 
-    <%= render 'dev_activities/user_dev_activities' %>
-
+    <%= link_to "My Development Activities", user_dev_activities_users_path(current_user), class: "nav_button" %>
+    
   </div>
 </div>

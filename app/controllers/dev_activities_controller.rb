@@ -12,6 +12,7 @@ class DevActivitiesController < ApplicationController
   # GET /dev_activities/1
   # GET /dev_activities/1.json
   def show
+
   end
 
   # GET /dev_activities/new

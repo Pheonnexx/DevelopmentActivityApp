@@ -25,10 +25,11 @@ end
 
 When(/^he views his profile$/) do
   page.click_link('My Profile')
+  page.click_link('My Development Activities')
 end
 
 Then(/^he sees the dev activity for the book$/) do
-  assert page.has_content?('My Development Activities')
+  page.should have_text('My Development Activities')
   assert page.has_content?(@dev_activity.dev_type)
   assert page.has_content?("02/02/2012")
   assert page.has_content?(@dev_activity.time_taken)

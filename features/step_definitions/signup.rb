@@ -8,6 +8,7 @@ end
 
 When(/^I select to sign up$/) do
   visit_mainpage
+  @role = FactoryGirl.create(:role)
   page.click_link('Signup')
 end
 
@@ -106,7 +107,6 @@ When(/^I enter all information but the job grade$/) do
   page.fill_in "Work Group", :with => "Testing"
   page.fill_in "Password", :with => "bananas1"
   page.fill_in "Password Confirmation", :with => "bananas1"
-  #page.fill_in "Job Grade", :with => "RE2L"
   page.fill_in "Location", :with => "IS"
   page.fill_in "Team", :with => "Service Support"
 end
@@ -123,7 +123,6 @@ When(/^I enter all information but the location$/) do
   page.fill_in "Password", :with => "bananas1"
   page.fill_in "Password Confirmation", :with => "bananas1"
   page.fill_in "Job Grade", :with => "RE2L"
-  #page.fill_in "Location", :with => "IS"
   page.fill_in "Team", :with => "Service Support"
 end
 

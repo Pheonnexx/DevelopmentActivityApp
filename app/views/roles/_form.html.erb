@@ -10,18 +10,27 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
+<div id='form'>
     <%= f.label :role_name, 'Role Name' %><br />
-    <%= f.text_field :role_name, class: "form_field"  %>
-  </div>
+    <%= f.text_field :role_name, class: "form_field"  %><br />
 
-    <div>
     <%= f.label :role_description, 'Role Description' %><br />
     <%= f.text_field :role_description, class: "form_field"  %>
+
+<div id='role_skills'>
+  <%= f.fields_for :role_skills do |builder| %>
+
+    <%= render 'role_skill_fields', :f => builder %>
+
+  <% end %>
+
+  <div id='links'>
+    <%= link_to_add_association 'add a skill', f, :role_skills %>
   </div>
+</div>
 
   <div class="actions">
-    <%= f.submit 'Create Role', class: "nav_button" %>
+    <%= f.submit 'Save Job Role', class: "nav_button" %>
   </div>
+</div>
 <% end %>

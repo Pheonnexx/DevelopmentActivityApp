@@ -1,5 +1,4 @@
 
-
 Given(/^that "(.*?)" is logged in$/) do |first_name|
   @role = FactoryGirl.create(:role)
   @user = FactoryGirl.create(:user, :first_name => first_name, :role_id => @role.id)
@@ -7,22 +6,26 @@ Given(/^that "(.*?)" is logged in$/) do |first_name|
 end
 
 Then(/^she can choose the option to record a development activity$/) do
-  assert page.has_link?('New Dev Activity')
+  page.click_link('My Profile')
+  page.click_link("My Development Activities")
+  assert page.has_link?('Add Development Activity')
 end
 
 When(/^she selects to record an activity$/) do
-  page.click_link('New Dev Activity')
+  page.click_link('Add Development Activity')
 end
 
 Then(/^she is directed to record development activity section$/) do
-  assert page.has_content?('New Dev Activity')
+  page.should have_text('Add Development Activity')
 end
 
 Given(/^that "(.*?)" has chosen to record an activity$/) do |first_name|
   @role = FactoryGirl.create(:role)
   @user = FactoryGirl.create(:user, :first_name => first_name, :role_id => @role.id)
   login
-  page.click_link('New Dev Activity')
+  page.click_link('My Profile')
+  page.click_link("My Development Activities")
+  page.click_link('Add Development Activity')
 end
 
 Given(/^she records "(.*?)" as a development type$/) do |dev_type|
@@ -46,7 +49,7 @@ Given(/^she records in notes that it was "(.*?)"$/) do |activity_notes|
 end
 
 When(/^she submits this$/) do
-  page.click_button('Create New Dev Activity')
+  page.click_button('Confirm')
 end
 
 Then(/^it is saved$/) do
@@ -76,7 +79,7 @@ When(/^I enter "(.*?)"$/) do |key_learning_point|
 end
 
 When(/^I select to save the development activity$/) do
-  page.click_button('Create New Dev Activity')
+  page.click_button('Confirm')
 end
 
 Then(/^the key learning point is displayed as part of the development activity$/) do

@@ -1,25 +1,39 @@
-<h1>Listing roles</h1>
+<div class="outer-block">
+  <div class="inner-block">    
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <h2>Job Roles</h2>
 
-  <tbody>
-    <% @roles.each do |role| %>
-      <tr>
-        <td><%= link_to 'Show', role %></td>
-        <td><%= link_to 'Edit', edit_role_path(role) %></td>
-        <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <p>
+      <%= link_to('New Job Role', new_role_path, class: "nav_button") %>
+    </p>
 
-<br>
+    <div id='roles'>
 
-<%= link_to 'New Role', new_role_path %>
+      <table>
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Role Description</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @roles.each do |role| %>
+            <tr>
+              <td><%= role.role_name %></td>
+              <td><%= role.role_description %></td>
+              <td><%= link_to 'Show', role %></td>
+              <td><%= link_to 'Edit', edit_role_path(role) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>
+
+

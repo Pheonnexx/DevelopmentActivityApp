@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def user_dev_activities
+    @dev_activity = current_user.dev_activities
+  end
+
   # GET /users/1/edit
   def edit
   end

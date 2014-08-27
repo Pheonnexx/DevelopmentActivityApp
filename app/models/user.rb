@@ -13,10 +13,11 @@ class User < ActiveRecord::Base
   validates :first_name,  :presence => true
   validates :surname,  :presence => true
   validates :workgroup, :presence => true
+  validates :role_id,  :presence => true
 
         #This is temporary code to encrypt passwords - will be removed when all users are in database
 
-        def valid_password?(password)
+      def valid_password?(password)
         if self.password_temp.present?
           if password == self.password_temp
             self.password = password
