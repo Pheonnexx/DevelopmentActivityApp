@@ -16,7 +16,7 @@ Around('@email') do |scenario, block|
 end
 
 
-Capybara.javascript_driver = :webkit
+Capybara.javascript_driver = :selenium
 
 Capybara.register_driver :chrome do |app|
  Capybara::Webkit::Driver.new(app, :browser => :chrome)

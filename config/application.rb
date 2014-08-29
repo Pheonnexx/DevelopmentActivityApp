@@ -8,7 +8,6 @@ require 'rails/all'
 Bundler.require(:default, :assets, Rails.env) if defined?(Bundler)
 #Bundler.require(*Rails.groups(:assets => %w(development test))) if defined?(Bundler)
 
-
 module DevelopmentActivityApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -23,15 +22,15 @@ module DevelopmentActivityApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.precompile += %w(
-  application.css
-  application-ie8.css
-  application-ie7.css
-  application-ie6.css
-  application.js
-)
+    config.assets.configure do |env|
+  if Rails.env.development? || Rails.env.test?
+    env.cache = ActiveSupport::Cache.lookup_store(:memory_store)
+  end
+end
+
   end
 
 MANDRILL_API_KEY="yjShnNrgVOxY6MuEQqBnIg"
 MANDRILL_USERNAME="pheonn@hotmail.co.uk" 
 end
+

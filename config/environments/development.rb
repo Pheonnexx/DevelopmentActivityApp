@@ -42,7 +42,7 @@ config.assets.precompile += [ Proc.new {|path| File.basename(path) =~ /^[^_].*\.
     :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
     :user_name => "pheonn@hotmail.co.uk",
-    :password  => "yjShnNrgVOxY6MuEQqBnIg", # SMTP password is any valid API key
+    :password  => "MANDRILL_API_KEY", # SMTP password is any valid API key
     :authentication => 'plain', # Mandrill supports 'plain' or 'login'
     :domain => 'localhost', # your domain to identify your server when connecting
   }

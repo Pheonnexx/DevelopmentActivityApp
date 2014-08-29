@@ -12,7 +12,7 @@ DevelopmentActivityApp::Application.configure do
     :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
     :user_name => "pheonn@hotmail.co.uk",
-    :password  => "yjShnNrgVOxY6MuEQqBnIg", # SMTP password is any valid API key
+    :password  => "MANDRILL_API_KEY", # SMTP password is any valid API key
     :authentication => 'plain', # Mandrill supports 'plain' or 'login'
     :domain => 'localhost', # your domain to identify your server when connecting
   }
@@ -22,7 +22,7 @@ DevelopmentActivityApp::Application.configure do
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped
   # and recreated between test runs. Don't rely on the data there!
-  config.cache_classes = true
+  config.cache_classes = false
 
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
@@ -32,7 +32,7 @@ DevelopmentActivityApp::Application.configure do
   config.assets.precompile += [ Proc.new {|path| File.basename(path) =~ /^[^_].*\.\w+$/} ]
 
   # Configure static asset server for tests with Cache-Control for performance.
-  config.serve_static_assets  = true
+  config.serve_static_assets  = false
   config.static_cache_control = "public, max-age=3600"
 
   # Show full error reports and disable caching.

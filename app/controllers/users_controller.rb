@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :find_skills, only: [:show, :destroy]
-  before_action :find_roles, only: [:show, :create, :edit, :index]
+  before_action :find_roles, only: [:show, :create, :edit]
 
   # GET /users
   # GET /users.json

@@ -1,0 +1,479 @@
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* line 46, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/_shims.scss */
+.outer-block:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* line 46, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/_shims.scss */
+.outer-block:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* line 46, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/_shims.scss */
+.outer-block:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* line 46, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/_shims.scss */
+.outer-block:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 12, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 80px;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: none;
+  padding-top: 8px;
+  padding-bottom: 7px;
+  font-weight: bold;
+}
+@media (max-width: 640px) {
+  /* line 12, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  h1 {
+    font-size: 53px;
+    line-height: 1.03774;
+  }
+}
+@media (min-width: 641px) {
+  /* line 12, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  h1 {
+    padding-top: 6px;
+    padding-bottom: 14px;
+  }
+}
+
+/* line 17, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+h2 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.04167;
+  font-weight: 400;
+  text-transform: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  border-bottom: solid #9799c4 10px;
+}
+@media (max-width: 640px) {
+  /* line 17, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  h2 {
+    font-size: 32px;
+    line-height: 1.09375;
+  }
+}
+@media (min-width: 641px) {
+  /* line 17, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  h2 {
+    padding-top: 7px;
+    padding-bottom: 13px;
+  }
+}
+
+/* line 23, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+h2.subtitle {
+  font-weight: normal;
+  font-style: italic;
+  color: #6f777b;
+}
+
+/* line 29, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+p {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 29, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  p {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 33, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+table {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  width: 100%;
+}
+@media (max-width: 640px) {
+  /* line 33, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  table {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 38, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+th {
+  font-weight: bold;
+  text-align: left;
+}
+
+/* line 43, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+td {
+  padding: 5px 0;
+  /* 10px top & bottom padding, 0px left & right */
+  border-width: 1px 0 0 0;
+  /*  1px top & bottom border,  0px left & right */
+  border-color: #000;
+  border-style: solid;
+}
+
+/* line 51, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+.form_field {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 51, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  .form_field {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 55, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+form, input, select, textarea {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 55, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  form, input, select, textarea {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 59, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+input:focus {
+  outline: 3px solid #ffbf47;
+}
+
+/* line 63, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+.phase-banner {
+  padding: 10px 0 8px 0;
+  border-bottom: 1px solid #bfc1c3;
+}
+@media (min-width: 641px) {
+  /* line 63, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  .phase-banner {
+    padding-bottom: 10px;
+  }
+}
+/* line 19, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_alpha-beta.scss */
+.phase-banner p {
+  margin: 0;
+  color: black;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 19, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_alpha-beta.scss */
+  .phase-banner p {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 25, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_alpha-beta.scss */
+.phase-banner .phase-tag {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #d53880;
+}
+@media (min-width: 641px) {
+  /* line 25, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_alpha-beta.scss */
+  .phase-banner .phase-tag {
+    vertical-align: baseline;
+  }
+}
+@media (max-width: 640px) {
+  /* line 25, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_alpha-beta.scss */
+  .phase-banner .phase-tag {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 29, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_alpha-beta.scss */
+.phase-banner span {
+  display: -moz-inline-stack;
+  display: inline-block;
+  width: 75%;
+  vertical-align: top;
+}
+@media (min-width: 641px) {
+  /* line 29, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_alpha-beta.scss */
+  .phase-banner span {
+    width: auto;
+    vertical-align: baseline;
+  }
+}
+
+/* line 67, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+.top_nav_bar {
+  position: relative;
+}
+
+/* line 71, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+ul li {
+  padding: 0px;
+  position: relative;
+  list-style: none;
+  display: inline;
+}
+
+/* line 78, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+.app_header {
+  padding: 10px 0px;
+  border-bottom: solid #2e358b 10px;
+}
+
+/* line 83, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+.nav_button {
+  position: absolute;
+  background-color: #00823b;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 0.3em 0.6em 0.2em 0.6em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: white;
+  /* GDS button style */
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+/* line 49, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button:visited {
+  background-color: #00823b;
+}
+/* line 53, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button:hover, .nav_button:focus {
+  background-color: #00692f;
+}
+/* line 56, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button:active {
+  top: 2px;
+  -webkit-box-shadow: 0 0 0 #00823b;
+  -moz-box-shadow: 0 0 0 #00823b;
+  box-shadow: 0 0 0 #00823b;
+}
+/* line 64, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button.disabled, .nav_button[disabled="disabled"], .nav_button[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+/* line 66, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button.disabled:hover, .nav_button[disabled="disabled"]:hover, .nav_button[disabled]:hover {
+  cursor: default;
+  background-color: #00823b;
+}
+/* line 70, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button.disabled:active, .nav_button[disabled="disabled"]:active, .nav_button[disabled]:active {
+  top: 0;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+}
+/* line 85, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button:link, .nav_button:hover, .nav_button:focus, .nav_button:visited {
+  color: white;
+}
+/* line 100, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 110, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button:active:before {
+  top: -10%;
+  height: 120%;
+}
+/* line 123, /Users/heatherpoole/.rvm/gems/ruby-2.1.1/bundler/gems/govuk_frontend_toolkit_gem-9db27f6cd5e8/app/assets/stylesheets/design-patterns/_buttons.scss */
+.nav_button[rel="external"]:after {
+  display: none;
+  content: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (max-width: 640px) {
+  /* line 83, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  .nav_button {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 89, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+.password_change {
+  border-style: solid;
+  border-width: 0px;
+}
+
+/* line 94, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+.logout {
+  float: right;
+  left: auto;
+  top: auto;
+}
+
+/* line 100, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+.outer-block {
+  margin: 0 auto;
+  width: auto;
+  max-width: 1020px;
+}
+
+/* line 104, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+.inner-block {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 641px) {
+  /* line 104, /Users/heatherpoole/Desktop/WORK_DAS/development_activity_app/app/assets/stylesheets/mainpage/index.css.scss */
+  .inner-block {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
