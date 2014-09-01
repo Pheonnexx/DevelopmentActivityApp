@@ -1,5 +1,4 @@
 @US014 
-@javascript
 
 Feature: Delete Users
 
@@ -14,6 +13,7 @@ Background:
 	Given that I am logged in as an admin
 	And I am currently on the admin dashboard
 
+@manual
 	Scenario: Confirm and Delete a User
 		Given that I select to manage users
 		And it displays a list of users

@@ -32,7 +32,7 @@ DevelopmentActivityApp::Application.configure do
   config.assets.precompile += [ Proc.new {|path| File.basename(path) =~ /^[^_].*\.\w+$/} ]
 
   # Configure static asset server for tests with Cache-Control for performance.
-  config.serve_static_assets  = false
+  config.serve_static_assets  = true
   config.static_cache_control = "public, max-age=3600"
 
   # Show full error reports and disable caching.

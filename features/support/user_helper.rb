@@ -13,8 +13,8 @@ module UserHelper
   end
 
   def delete_user
-    within(:xpath, "//*[@id='users']/table") do
-      first(:button, 'Delete').click
+    within(:xpath, '//*[@id="users"]/table/tbody/tr[1]') do
+      click_button('Delete')
     end
     ask('')
   end
