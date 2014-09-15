@@ -1,0 +1,8 @@
+<%= search_form_for @q do |f| %>
+
+    <%= f.label :user_surname_cont, "Search by Surname" %>
+    <%= f.search_field :user_surname_cont %>
+
+  <div class="actions"><%= f.submit "Search", class: "nav_button" %></div>
+
+<% end %> 

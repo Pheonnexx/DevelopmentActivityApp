@@ -56,7 +56,6 @@ When(/^I select to logout$/) do
 end
 
 Then(/^I am returned to the mainpage$/) do
-  assert page.has_content?('Dev Activity App')
   assert page.has_link?('Login')
 end
 

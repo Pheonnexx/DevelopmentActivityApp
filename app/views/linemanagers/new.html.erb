@@ -1,0 +1,44 @@
+<div class="outer-block">
+    <div class="inner-block">
+
+		<h2>Add Team Members</h2>
+
+		<%= render 'search' %>
+
+		<table>
+		  <thead>
+		    <tr>
+		      <th><%= sort_link @search, :first_name, "First Name" %></th>
+		      <th><%= sort_link @search, :surname, "Surname" %></th>
+		      <th></th>
+		      <th></th>
+		      <th></th>
+		      <th></th>
+		    </tr>
+		  </thead>
+		    <% @users.each do |user| %>
+		    <tr>
+		        <td><%= user.first_name %></td>
+		        <td><%= user.surname %></td>
+		        <td><%# button_to 'Show', course, :method => "get", class: "nav_button", class: "nav_button" %></td>
+		        <% if current_user.admin? %>
+		        <td><%# button_to 'Edit', edit_course_path(course), :method => "get", class: "nav_button" %></td>
+		        <td><%# button_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' }, class: "nav_button" %></td>
+		          <% #if course.status == 'requested' %>
+		          <td><%#form_for(course) do |f| %>
+		              <%# f.hidden_field :status, :value => "approved" %>
+		              <%# f.submit "Approve", class: "nav_button" %>
+		              <%# end %>
+		              </td>
+		          <% else %>
+		          <% end %>
+		        <% else %>
+		        <% end %>
+
+		      </tr>
+		    <% end %>
+		</table>
+
+	</div>
+</div>
+

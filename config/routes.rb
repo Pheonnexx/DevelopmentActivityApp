@@ -7,7 +7,10 @@ DevelopmentActivityApp::Application.routes.draw do
   end
 
   get "pages/AdminDashboard"
+  get "pages/LineManagerDashboard"
   resources :skills
+
+  resources :linemanagers
 
   resources :dev_activities
 
@@ -24,6 +27,7 @@ DevelopmentActivityApp::Application.routes.draw do
         get 'user_dev_activities'
       end
     resources :user_skills
+    resources :linemanagers
   end
 
   # Example of regular route:

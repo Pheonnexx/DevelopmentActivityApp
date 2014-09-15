@@ -28,12 +28,18 @@
 
           <%= link_to('My Profile', user_path(current_user), class: "nav_button") %>
 
+            <% if current_user.line_manager? %>
+
+              <%= link_to('Line Management Dashboard', pages_LineManagerDashboard_path, class: "nav_button") %>
+
+            <% end %>
+
             <% if current_user.admin? %>
 
               <%= link_to('Admin Dashboard', pages_AdminDashboard_path, class: "nav_button") %>
 
-
             <% end %>
+
             <div class="logout">
                 <%= button_to('Logout', destroy_user_session_path, method: :delete, class: "nav_button") %>
             </div>

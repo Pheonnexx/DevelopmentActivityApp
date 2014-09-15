@@ -1,0 +1,37 @@
+<div class="outer-block">
+    <div class="inner-block">
+
+    <h2>Add Team Members</h2>
+
+    <%= render 'search' %>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>Line manager</th>
+          <th>User</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @linemanagers.each do |linemanager| %>
+          <tr>
+            <td><%= linemanager.line_manager_id %></td>
+            <td><%= linemanager.user_id %></td>
+            <td><%= link_to 'Show', linemanager %></td>
+            <td><%= link_to 'Edit', edit_linemanager_path(linemanager) %></td>
+            <td><%= link_to 'Destroy', linemanager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+
+  </div>
+</div>

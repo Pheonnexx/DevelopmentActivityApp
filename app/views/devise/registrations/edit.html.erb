@@ -16,13 +16,18 @@
     </div>
 
     <div>
-        <%= f.label :first_name, 'First Name' %><br />
-        <%= f.text_field :first_name, class: "form_field"  %>
+      <%= f.label :first_name, 'First Name' %><br />
+      <%= f.text_field :first_name, class: "form_field"  %>
     </div>
 
     <div>
-        <%= f.label :surname %><br />
-        <%= f.text_field :surname, class: "form_field"  %>
+      <%= f.label :surname %><br />
+      <%= f.text_field :surname, class: "form_field"  %>
+    </div>
+
+    <div>
+      <%= f.label :line_manager, 'I am a Line Manager' %><br />
+      <%= f.check_box :line_manager %>
     </div>
 
     <div>
@@ -64,7 +69,11 @@
 
   </div>
 
-    <div><%= f.submit "Update", class: "nav_button" %></div>
+    <div>
+      <%= f.submit "Update", class: "nav_button" %>
+      <%= link_to 'Cancel Changes', @user, class: "nav_button" %>
+    </div>
+    
     <% end %>
 
   </div>

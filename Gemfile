@@ -11,9 +11,12 @@ gem 'rails', '4.0.0'
 gem 'execjs'
 gem 'therubyracer'
 
+#server thing
 gem 'passenger'
-
+#for the use of postgress
 gem 'pg'
+
+
 
 group :heroku do
   gem 'rails_12factor'
@@ -31,6 +34,8 @@ gem 'coffee-rails', '~> 4.0.0'
 #for help with the forms
 gem 'cocoon'
 gem 'simple_form'
+#for help with search functions
+gem 'ransack'
 
 # deployment
 gem 'capistrano'

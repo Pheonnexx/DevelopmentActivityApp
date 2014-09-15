@@ -22,11 +22,16 @@ FactoryGirl.define do
   	f.password "password1"
   	f.password_confirmation "password1"
     f.admin false
+    f.line_manager false
     f.role_id "1"
   end
 
   trait :admin do
     admin true
+  end
+
+  trait :line_manager do
+    line_manager true
   end
 
 end

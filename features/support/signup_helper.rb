@@ -3,7 +3,6 @@ module SignupHelper
 
   def visit_mainpage
   	visit '/'
-  	assert page.has_content?('Dev Activity App')
   end
 
   def click_signup

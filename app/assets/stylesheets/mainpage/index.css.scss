@@ -9,6 +9,12 @@
 @import 'design-patterns/_alpha-beta';
 @import '_grid_layout';
 
+.logo {
+  padding: 5px;
+  height: auto;
+  width: auto;
+}
+
 h1 {
 	@include heading-80;
 	font-weight:bold;

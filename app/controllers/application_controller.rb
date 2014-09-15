@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
 
   #This is used to send more permitted parameters when creating a sign on - allows these extra ones for the devise login stuff
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :surname, :email, :workgroup, :role_id, :job_grade, :location, :team, :admin, :password, :password_confirmation) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :surname, :email, :workgroup, :role_id, :job_grade, :line_manager, :location, :team, :admin, :password, :password_confirmation) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:first_name, :surname, :email, :workgroup, :password, :remember_me) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :surname, :email, :workgroup, :role_id, :job_grade, :location, :team, :admin, :password, :password_confirmation, :current_password) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :surname, :email, :workgroup, :role_id, :job_grade, :line_manager, :location, :team, :admin, :password, :password_confirmation, :current_password) }
 	end
 
   def after_sign_in_path_for(resource)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815085915) do
+ActiveRecord::Schema.define(version: 20140911084311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20140815085915) do
   end
 
   add_index "dev_activities", ["user_id"], name: "index_dev_activities_on_user_id", using: :btree
+
+  create_table "linemanagers", force: true do |t|
+    t.integer  "line_manager_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "role_skills", force: true do |t|
     t.integer  "skill_id",   null: false
@@ -81,6 +88,7 @@ ActiveRecord::Schema.define(version: 20140815085915) do
     t.string   "password_temp"
     t.boolean  "admin"
     t.integer  "role_id"
+    t.boolean  "line_manager"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

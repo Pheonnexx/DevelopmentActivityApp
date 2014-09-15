@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :dev_activities, dependent: :destroy
   has_many :user_skills, dependent: :destroy
   has_many :skills, :through => :user_skills
+  has_many :linemanagers, dependent: :destroy
 
   #For a user to sign up they much record there first name, surname and workgroup (and email - but that is also username)
   validates :first_name,  :presence => true

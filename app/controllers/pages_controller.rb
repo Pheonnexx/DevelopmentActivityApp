@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   
   end
 
+  def LineManagerDashboard
+
+  end
+
 end
