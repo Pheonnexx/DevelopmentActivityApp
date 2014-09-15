@@ -28,6 +28,9 @@ DevelopmentActivityApp::Application.routes.draw do
       end
     resources :user_skills
     resources :linemanagers
+    collection do
+      get 'user_search'
+    end
   end
 
   # Example of regular route:

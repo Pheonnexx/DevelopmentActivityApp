@@ -24,6 +24,11 @@ class UsersController < ApplicationController
     @dev_activity = current_user.dev_activities
   end
 
+  def user_search
+    @q = User.search(params[:q])
+    @users = @q.result.includes(:user)
+  end
+
   # GET /users/1/edit
   def edit
   end

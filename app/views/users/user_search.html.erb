@@ -1,0 +1,46 @@
+
+
+<div class="outer-block">
+    <div class="inner-block">
+
+    <h2>Add Team Members</h2>
+
+    <%= search_form_for @q do |f| %>
+
+    <%= f.label :surname_cont, "Search by Surname" %>
+    <%= f.search_field :surname_cont %>
+
+  	<div class="actions"><%= f.submit "Search", class: "nav_button" %></div>
+
+	<% end %> 
+
+
+    <table>
+      <thead>
+        <tr>
+          <th><%= sort_link(@q, :first_name) %></th>
+          <th><%= sort_link(@q, :surname) %></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.surname %></td>
+            <td><%= link_to 'Show', linemanager %></td>
+            <td><%= link_to 'Edit', edit_linemanager_path(linemanager) %></td>
+            <td><%= link_to 'Destroy', linemanager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+
+  </div>
+</div>
