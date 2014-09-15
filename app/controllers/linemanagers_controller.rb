@@ -4,8 +4,7 @@ class LinemanagersController < ApplicationController
   # GET /linemanagers
   # GET /linemanagers.json
   def index
-    @q = Linemanager.search(params[:q])
-    @linemanagers = @q.result.includes(:user)
+
   end
 
   # GET /linemanagers/1
