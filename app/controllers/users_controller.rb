@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :find_skills, only: [:show, :destroy]
   before_action :find_roles, only: [:show, :create, :edit]
+  before_filter :authenticate_user!
 
   # GET /users
   # GET /users.json
@@ -25,8 +26,8 @@ class UsersController < ApplicationController
   end
 
   def user_search
-    @q = User.search(params[:q])
-    @users = @q.result.includes(:user)
+    @search = User.search(params[:q])
+    @users = @search.result #.includes(:user)
   end
 
   # GET /users/1/edit

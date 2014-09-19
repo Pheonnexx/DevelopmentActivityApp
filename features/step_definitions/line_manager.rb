@@ -34,7 +34,8 @@ When(/^I navigate to add someone to my team$/) do
 end
 
 When(/^I search for "(.*?)" "(.*?)"$/) do |firstname, surname|
-  pending # express the regexp above with the code you wish you had
+  page.fill_in "First Name", :with => firstname
+  page.fill_in "Surname", :with => surname
 end
 
 When(/^I select to add them$/) do

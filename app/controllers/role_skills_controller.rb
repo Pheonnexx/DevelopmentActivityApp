@@ -1,5 +1,6 @@
 class RoleSkillsController < ApplicationController
   before_action :set_role_skill, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /role_skills
   # GET /role_skills.json
