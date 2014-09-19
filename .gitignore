@@ -15,6 +15,5 @@
 /log/*.log
 /tmp
 
-#personal information to get email working temporarily
-/Procfile
+#personal information to get email working temporarilys
 /.env
