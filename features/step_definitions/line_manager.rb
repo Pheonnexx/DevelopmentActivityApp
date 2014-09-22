@@ -36,6 +36,7 @@ end
 When(/^I search for "(.*?)" "(.*?)"$/) do |firstname, surname|
   page.fill_in "First Name", :with => firstname
   page.fill_in "Surname", :with => surname
+  page.click
 end
 
 When(/^I select to add them$/) do
