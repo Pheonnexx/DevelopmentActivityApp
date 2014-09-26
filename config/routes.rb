@@ -10,7 +10,7 @@ DevelopmentActivityApp::Application.routes.draw do
   get "pages/LineManagerDashboard"
   resources :skills
 
-  resources :linemanagers
+
 
   resources :dev_activities
 
@@ -20,7 +20,9 @@ DevelopmentActivityApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => "mainpage#index"
 
-  devise_for :users
+  devise_for :users,
+            :controllers => {:registrations => "my_devise/registrations"}
+
   resources :users do
     resources :dev_activities
       collection do

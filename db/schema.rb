@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911084311) do
+ActiveRecord::Schema.define(version: 20140925155714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,20 @@ ActiveRecord::Schema.define(version: 20140911084311) do
 
   add_index "dev_activities", ["user_id"], name: "index_dev_activities_on_user_id", using: :btree
 
+  create_table "linemanager_users", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "linemanagers", force: true do |t|
-    t.integer  "line_manager_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "linemanagers_users", force: true do |t|
+    t.integer "linemanager_id"
+    t.integer "user_id"
   end
 
   create_table "role_skills", force: true do |t|

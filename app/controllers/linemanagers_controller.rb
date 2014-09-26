@@ -15,7 +15,8 @@ class LinemanagersController < ApplicationController
 
   # GET /linemanagers/new
   def new
-    @linemanager = Linemanager.new
+    @user = current_user.id
+    @linemanager = @user.linemanagers.build
   end
 
   # GET /linemanagers/1/edit
@@ -25,7 +26,8 @@ class LinemanagersController < ApplicationController
   # POST /linemanagers
   # POST /linemanagers.json
   def create
-    @linemanager = Linemanager.new(linemanager_params)
+    @user = current_user.id
+    @linemanager = @user.linemanagers.new(linemanager_params)
 
     respond_to do |format|
       if @linemanager.save
@@ -70,6 +72,6 @@ class LinemanagersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def linemanager_params
-      params.require(:linemanager).permit(:line_manager_id, :user_id)
+      params.require(:linemanager).permit(, :user_id)
     end
 end

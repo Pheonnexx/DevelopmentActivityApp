@@ -10,10 +10,12 @@
       <%= f.label :surname_cont, "Search by Surname" %>
       <%= f.search_field :surname_cont %>
 
+      <%= f.label :first_name_cont, "Search by First Name" %>
+      <%= f.search_field :first_name_cont %>
+
     	<div class="actions"><%= f.submit "Search", class: "nav_button" %></div>
 
 	  <% end %> 
-
 
     <table>
       <thead>
@@ -27,9 +29,10 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
-            <td><%= user.first_name %></td>
+            <td><%= user.first_name %></td>  
             <td><%= user.surname %></td>
             <td><%= link_to 'Show', user %></td>
+            <td><%= render template: "linemanagers/new" %></td>        
           </tr>
         <% end %>
       </tbody>

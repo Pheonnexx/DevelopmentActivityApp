@@ -34,13 +34,15 @@ When(/^I navigate to add someone to my team$/) do
 end
 
 When(/^I search for "(.*?)" "(.*?)"$/) do |firstname, surname|
-  page.fill_in "First Name", :with => firstname
-  page.fill_in "Surname", :with => surname
-  page.click
+  @firstname = firstname
+  page.fill_in "Search by First Name", :with => firstname
+  page.fill_in "Search by Surname", :with => surname
+  page.click_button('Search')
 end
 
 When(/^I select to add them$/) do
-  pending # express the regexp above with the code you wish you had
+  page.has_text?(@firstname)
+  page.click_link("Add to Team")
 end
 
 Then(/^they are added to the team I line manage$/) do

@@ -1,3 +1,3 @@
 class Linemanager < ActiveRecord::Base
-	belongs_to :user
+	has_many :users, :through => :linemanager_user
 end
