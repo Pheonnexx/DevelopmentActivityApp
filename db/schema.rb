@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925155714) do
+ActiveRecord::Schema.define(version: 20140930082935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,20 +29,10 @@ ActiveRecord::Schema.define(version: 20140925155714) do
 
   add_index "dev_activities", ["user_id"], name: "index_dev_activities_on_user_id", using: :btree
 
-  create_table "linemanager_users", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "linemanagers", force: true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "linemanagers_users", force: true do |t|
-    t.integer "linemanager_id"
-    t.integer "user_id"
   end
 
   create_table "role_skills", force: true do |t|
@@ -103,5 +93,12 @@ ActiveRecord::Schema.define(version: 20140925155714) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
+
+  create_table "users_linemanagers", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "linemanager_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

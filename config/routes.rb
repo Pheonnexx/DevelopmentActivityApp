@@ -1,5 +1,8 @@
 DevelopmentActivityApp::Application.routes.draw do
 
+
+  resources :users_linemanagers  
+
   resources :role_skills
 
   resources :roles do 
@@ -9,8 +12,6 @@ DevelopmentActivityApp::Application.routes.draw do
   get "pages/AdminDashboard"
   get "pages/LineManagerDashboard"
   resources :skills
-
-
 
   resources :dev_activities
 
@@ -30,10 +31,17 @@ DevelopmentActivityApp::Application.routes.draw do
       end
     resources :user_skills
     resources :linemanagers
-    collection do
-      get 'user_search'
+    resources :users_linemanagers do
+        collection do
+          get 'user_search'
+        end
     end
+    patch 'update_password', on: :collection
+    get 'edit_password', on: :member
   end
+
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

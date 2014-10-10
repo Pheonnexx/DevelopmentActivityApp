@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :find_skills, only: [:show, :destroy]
   before_action :find_roles, only: [:show, :create, :edit]
+  before_action :set_linemanager, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
   # GET /users
@@ -21,17 +21,18 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def user_dev_activities
-    @dev_activity = current_user.dev_activities
+  def edit_password
+    @user = current_user
   end
 
-  def user_search
-    @search = User.search(params[:q])
-    @users = @search.result #.includes(:user)
-  end
-
-  # GET /users/1/edit
-  def edit
+  def update_password
+    @user = User.find(current_user.id)
+    if @user.update_with_password(password_params)
+      sign_in @user, :bypass => true
+      redirect_to @user, notice: 'Your password was successfully changed.'
+    else
+      render "edit_password"
+    end
   end
 
   # POST /users
@@ -51,21 +52,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
-  # Updates the user with the allowed parameters - redirects to profile when updated successfully
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render action: 'show', status: :updated, location: @user }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /users/1
   # DELETE /users/1.json
   # Currently not in use - will change this to redirect to mainpage when utilised
@@ -80,9 +66,6 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     # Finds the user when an ID is provided
-    def set_user
-      @user = User.find(params[:id])
-    end
 
     def find_skills
       @user = User.find(params[:id])
@@ -94,10 +77,19 @@ class UsersController < ApplicationController
       @role = Role.where("id = @user.role_id")
     end
 
+    def set_linemanager
+      @user1 = current_user
+      @linemanager = Linemanager.where("user_id = @user1.id")
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     # Any new parameters need to be added here as well as in the user controller to have them store correctly
     def user_params
       params.require(:user).permit(:first_name, :surname, :email, :workgroup, :role_id, :job_grade, 
           :location, :team, :admin, :line_manager)
+    end
+
+    def password_params
+      params.require(:user).permit(:password, :password_confirmation, :current_password)
     end
 end

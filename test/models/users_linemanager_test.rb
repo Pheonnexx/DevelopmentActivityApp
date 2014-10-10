@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LinemanagerUserTest < ActiveSupport::TestCase
+class UsersLinemanagerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

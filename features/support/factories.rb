@@ -49,6 +49,14 @@ FactoryGirl.define do
 
 end
 
+FactoryGirl.define do 
+
+  factory :linemanager do |f|
+    f.user_id "1"
+  end
+
+end
+
 FactoryGirl.define do
 
   factory :skill do |f|

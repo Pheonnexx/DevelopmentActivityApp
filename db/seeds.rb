@@ -10,3 +10,5 @@ users = User.create!([{ id: '1234', first_name: 'Super', surname: 'User', email:
 #skills = Skill.create([{ skill_name: 'MS Excel', skill_code: 'SOSK', skill_type: 'Non Technical IT Skill' }])
 
 roles = Role.create([{ id: '1234', role_name: 'Testing', role_description: 'Quality Assurance' }])
+
+line_managers = Linemanager.create!([{ id: '1234', user_id: '1234'}])

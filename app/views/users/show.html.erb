@@ -25,7 +25,15 @@
   		<%= @user.email %>
 	  </p>
 
-    <%= link_to "Edit Profile or Change Password", edit_user_registration_path, class: "nav_button" %>
+    <% if current_user.id == @user.id %>
+
+    <%= link_to "Edit Profile", edit_user_registration_path, class: "nav_button" %>
+
+    <%= link_to "Change Password", edit_password_user_path(current_user), class: "nav_button" %>
+
+    <% else %>
+
+    <% end %>
 
     <%= link_to "My Skills", user_user_skills_path(current_user), class: "nav_button" %>
 

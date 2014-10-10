@@ -67,11 +67,11 @@ Given(/^enters "(.*?)" to confirm their password$/) do |password_confirmation|
 end
 
 When(/^they select to save their new password$/) do
-  page.click_button('Update')
+  page.click_button('Update Password')
 end
 
 Then(/^they are informed that it has been changed successfully$/) do
-  assert page.has_content?('You updated your account successfully.')
+  assert page.has_content?('Your password was successfully changed.')
 end
 
 Given(/^enters "(.*?)"$/) do |arg1|
@@ -94,7 +94,7 @@ end
 
 When(/^I choose to edit my profile$/) do
   page.click_link('My Profile')
-  page.click_link('Edit Profile or Change Password')
+  page.click_link('Edit Profile')
 end
 
 When(/^amend the surname to "(.*?)"$/) do |surname|
@@ -120,7 +120,7 @@ end
 
 Given(/^I have chosen to edit my profile$/) do
   page.click_link('My Profile')
-  page.click_link('Edit Profile or Change Password')
+  page.click_link('Edit Profile')
 end
 
 When(/^I have entered the needed profile changes$/) do

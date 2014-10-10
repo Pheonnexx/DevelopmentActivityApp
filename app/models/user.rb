@@ -8,9 +8,14 @@ class User < ActiveRecord::Base
   has_many :dev_activities, dependent: :destroy
   has_many :user_skills, dependent: :destroy
   has_many :skills, :through => :user_skills
-  has_and_belongs_to_many :linemanagers
-  has_one :linemanager
-  
+  has_one  :linemanager
+  has_many :users_linemanagers
+  has_many :linemanagers, :through => :users_linemanagers
+
+  accepts_nested_attributes_for :users_linemanagers,
+      :reject_if => lambda { |attrs| attrs.all? { |key, value| value.blank? } }, :allow_destroy => true
+
+
 
   #For a user to sign up they much record there first name, surname and workgroup (and email - but that is also username)
   validates :first_name,  :presence => true

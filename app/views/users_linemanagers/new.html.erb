@@ -1,0 +1,68 @@
+<div class="outer-block">
+    <div class="inner-block">
+
+    <h2>Add Team Members</h2>
+
+    <%= search_form_for @search, url: new_user_users_linemanager_path do |f| %>
+
+      <%= f.label :surname_cont, "Search by Surname" %>
+      <%= f.search_field :surname_cont %>
+
+      <%= f.label :first_name_cont, "Search by First Name" %>
+      <%= f.search_field :first_name_cont %>
+
+    	<div class="actions"><%= f.submit "Search", class: "nav_button" %></div>
+
+	  <% end %> 
+
+    <table>
+      <thead>
+        <tr>
+          <th><%= sort_link(@search, :first_name) %></th>
+          <th><%= sort_link(@search, :surname) %></th>
+          <th></th>
+          <th><%= "Linemanager" %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.first_name %></td>  
+            <td><%= user.surname %></td> 
+            <td><%= link_to 'Show', user %></td>
+            
+            <% @linemanaged = UsersLinemanager.where(:user_id => user.id).any? %> 
+
+            <td><% if @linemanaged == false %>
+
+            		<%= form_for @users_linemanager  do |f| %>
+
+                  		<%= f.hidden_field :user_id, :value => user.id %>
+
+                  		<%= f.hidden_field :linemanager_id, :value => current_user.id %>
+
+                        <div class="actions">
+                      		<%= f.submit "Linemanage", class: "nav_button" %>
+                        </div>
+
+                	<% end %>
+
+                <% else @linemanaged == true %>
+
+                	<% @linemanaged_by = UsersLinemanager.find_by(:user_id => user.id)%>
+                	<% @linemanager = Linemanager.find_by(:user_id => @linemanaged_by.linemanager_id) %>
+                	<%= "Linemanaged by #{@linemanager.user.first_name} #{@linemanager.user.surname}"  %>
+
+                <% end %>
+            </td>        
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+  </div>
+</div>
+

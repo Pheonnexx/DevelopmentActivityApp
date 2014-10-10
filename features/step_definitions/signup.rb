@@ -176,7 +176,6 @@ Given(/^has chosen to amend his profile$/) do
 end
 
 When(/^he choses the new job role of "(.*?)"$/) do |job_role|
-  page.fill_in "Current password", :with => @user.password
   page.select job_role, :from => 'user_role_id'
 end
 

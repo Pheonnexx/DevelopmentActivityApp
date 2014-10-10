@@ -26,7 +26,6 @@ class LinemanagersController < ApplicationController
   # POST /linemanagers
   # POST /linemanagers.json
   def create
-    @user = current_user.id
     @linemanager = @user.linemanagers.new(linemanager_params)
 
     respond_to do |format|
@@ -67,11 +66,12 @@ class LinemanagersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_linemanager
-      @linemanager = Linemanager.find(params[:id])
+      @user = current_user
+      @linemanager = Linemanager.where("user_id = @user.id")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def linemanager_params
-      params.require(:linemanager).permit(, :user_id)
+      params.require(:linemanager).permit(:user_id)
     end
 end

@@ -25,6 +25,7 @@ end
 Given(/^that I am logged in as a Line Manager$/) do
   @role = FactoryGirl.create(:role)
   @user = FactoryGirl.create(:user, :line_manager, :role_id => @role.id)
+  @line_manager = FactoryGirl.create(:linemanager, :user_id => @user.id)
   login
 end
 
@@ -41,10 +42,14 @@ When(/^I search for "(.*?)" "(.*?)"$/) do |firstname, surname|
 end
 
 When(/^I select to add them$/) do
-  page.has_text?(@firstname)
-  page.click_link("Add to Team")
+  assert page.has_text?(@firstname)
+  page.click_button("Linemanage")
+end
+
+Given(/^I want to add "(.*?)" "(.*?)" to my team$/) do |firstname, surname|
+  @user2 = FactoryGirl.create(:user, :first_name => firstname, :surname => surname,:role_id => @role.id)
 end
 
 Then(/^they are added to the team I line manage$/) do
-  pending # express the regexp above with the code you wish you had
+  assert page.has_text?("Linemanaged by #{@user.first_name} #{@user.surname}")
 end

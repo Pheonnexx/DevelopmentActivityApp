@@ -1,0 +1,11 @@
+<%= form_for @users_linemanager  do |f| %>
+
+		<%= f.hidden_field :user_id, :value => user.id %>
+
+		<%= f.hidden_field :linemanager_id, :value => current_user.id %>
+
+    <div class="actions">
+  		<%= f.submit "Linemanage", class: "nav_button" %>
+    </div>
+
+<% end %>
