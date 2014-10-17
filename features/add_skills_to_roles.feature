@@ -29,6 +29,7 @@ Background:
 		When I select to create the new role 
 		Then it is successfully saved alongside the three role skills
 
+@manual
 	Scenario: When editing a role I can add a skill
 		Given that I have chosen to edit a job role 
 		And I select the the skill "Development"

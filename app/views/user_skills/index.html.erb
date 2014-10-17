@@ -8,26 +8,35 @@
       <%= link_to "My Development Activities", user_dev_activities_users_path(current_user), class: "nav_button" %>
     </p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Skill Name</th>
-          <th>Skill Level</th>
-        </tr>
-      </thead>
+    <div id='user_skills'>
 
-      <tbody>
-        <% @user.user_skills.each do |user_skill| %>
+      <table>
+        <thead>
           <tr>
-
-            <td><%= user_skill.skill.skill_name %></td>
-
-            <td><%= user_skill.skill_level %></td>
-
+            <th>Skill Name</th>
+            <th>Skill Level</th>
+            <th>Skill Last Used</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          <% @user.user_skills.each do |user_skill| %>
+            <tr>
+
+              <td><%= user_skill.skill.skill_name %></td>
+
+              <td><%= user_skill.skill_level %></td>
+
+              <td><%= user_skill.date_last_used %></td>
+
+              <td><%= link_to 'Edit', edit_user_user_skill_path(current_user, user_skill) %></td>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
 
   </div>
 </div>

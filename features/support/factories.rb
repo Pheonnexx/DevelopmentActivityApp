@@ -73,8 +73,9 @@ FactoryGirl.define do
   factory :user_skill do |f|
     f.id
     f.skill_id "1"
-    f.skill_level "1"
+    f.skill_level "Basic"
     f.user_id "1"
+    f.date_last_used "0 - 6 Months"
   end
 
 end

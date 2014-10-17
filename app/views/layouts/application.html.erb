@@ -21,7 +21,7 @@
         </p>
       </div>
 
-      <%#This is the toolbar which is contained in the header - when signed in my profile, new dev activity and logout are displayed when the user is not currently logged in they are displayed the login and signup button %>
+      <%#This is the toolbar which is contained in the header - when signed in as a normal user my profile and sign out are displayed, if the user is admin they will be displayed a link to admin dashboard and if they are a linemanager then they will be displayed linemanager dashboard.  When the user is not currently logged in they are displayed the login and signup button %>
       <div id="top_nav_bar">
           
         <% if user_signed_in? %>

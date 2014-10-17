@@ -1,7 +1,6 @@
 class UserSkillsController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_user_skill, only: [:show, :edit, :update, :destroy]
-  before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   # GET /user_skills
   # GET /user_skills.json
@@ -34,11 +33,11 @@ class UserSkillsController < ApplicationController
 
     respond_to do |format|
       if @user_skill.save
-        format.html { redirect_to user_path(current_user), notice: 'User skill was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @user_skill }
+        format.html { redirect_to user_user_skills_path(current_user), notice: 'User skill was successfully created.' }
+        #format.json { render action: 'show', status: :created, location: @user_skill }
       else
         format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        #format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -48,7 +47,7 @@ class UserSkillsController < ApplicationController
   def update
     respond_to do |format|
       if @user_skill.update(user_skill_params)
-        format.html { redirect_to @user_skill, notice: 'User skill was successfully updated.' }
+        format.html { redirect_to user_user_skills_path(current_user), notice: 'User skill was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -73,15 +72,8 @@ class UserSkillsController < ApplicationController
       @user_skill = UserSkill.find(params[:id])
     end
 
-    def set_skill
-      @user = User.find(params[:id])
-      @user_skill = UserSkill.where("user_id = @user.id")
-      @skill = Skill.where("skill_id = @user_skill.skill_id")
-    end
-
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_skill_params
-      params.require(:user_skill).permit(:skill_id, :skill_level, :user_id)
+      params.require(:user_skill).permit(:skill_id, :skill_level, :user_id, :date_last_used)
     end
 end

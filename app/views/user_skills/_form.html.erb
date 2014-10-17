@@ -21,6 +21,11 @@
     <%= f.select(:skill_level, UserSkill::SKILL_LEVEL, :include_blank => true, :selected => ' ', class: 'form_field')  %>
   </div>
 
+  <div>
+    <%= f.label :date_last_used, 'Skill Last Used' %><br />
+    <%= f.select(:date_last_used, UserSkill::SKILL_AGE, :include_blank => true, :selected => ' ', class: 'form_field')  %>
+  </div>
+
     <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">

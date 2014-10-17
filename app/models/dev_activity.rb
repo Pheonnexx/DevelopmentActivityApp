@@ -6,6 +6,6 @@ class DevActivity < ActiveRecord::Base
 	validates :dev_type,  :presence => true
 
 	#This is the different development types that can be selected when recording a dev activity
-	DEVELOPMENT_TYPE = ["Book", "Mentoring", "Online Tutorial", "Booked Course"]
+	DEVELOPMENT_TYPE = ["Book", "Mentoring", "Online Tutorial", "CSL Course", "Other (Please enter details below)"]
 
 end

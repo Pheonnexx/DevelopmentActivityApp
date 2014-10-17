@@ -8,7 +8,7 @@ module RoleHelper
 
   def edit_role
 		within(:xpath, "//*[@id='roles']/table") do
-      click_link('Edit')
+      click_link('Edit', :match => :first)
   	end
   end
 

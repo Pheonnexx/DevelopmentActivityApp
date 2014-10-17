@@ -44,7 +44,8 @@ end
 
 When(/^I select the the skill "(.*?)"$/) do |skill|
   @skill_name = skill
-  page.select @skill_name, :from => 'role_role_skills_attributes_0_skill_id'
+  #page.select @skill_name, :from => 'role_role_skills_attributes_0_skill_id'
+  find(:css, "select[id^='role_role_skills_attributes_'][id$='_skill_id']").set(@skill_name)
 end
 
 When(/^I select to create the new role$/) do
@@ -56,10 +57,11 @@ Then(/^it is successfully saved alongside the role skill$/) do
 end
 
 Given(/^that I have chosen to edit a job role$/) do
-  @role_skill = FactoryGirl.create(:role_skill, :role_id => @role.id, :skill_id => @skill.id)
+  #@role_skill = FactoryGirl.create(:role_skill, :role_id => @role.id, :skill_id => @skill.id)
   page.click_link('Admin Dashboard')
   page.click_link('Manage Job Roles')
   edit_role
+  page.click_link("add a skill")
 end
 
 When(/^I select to update the job role$/) do

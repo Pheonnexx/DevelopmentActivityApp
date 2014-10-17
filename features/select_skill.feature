@@ -21,14 +21,14 @@ Feature: Select a skill and skill rating
 		Given that I am logged in 
 		And I have selected to add a skill
 		When I select 'MS Word' for the skill
-		And I select the skill level of '2'
+		And I select the skill level of "Expert"
 		When I select to save 
-		Then I am returned to my profile with a successful save message
+		Then I am returned to my skills with a successful save message
 
 	Scenario: I can view the skills I have added via my profile
 		Given that I am logged in 
-		And I have added a skill called 'MS Word' with a skill level of '4'
+		And I have added a skill called 'MS Word' with a skill level of "Basic"
 		When I view my profile 
 		And select to view my skills
-		Then I can see that I have the skill 'MS Word' with the skill level of '4'
+		Then I can see that I have the skill 'MS Word' with the skill level of "Basic"
 
