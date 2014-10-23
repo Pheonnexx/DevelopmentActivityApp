@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
   #For a user to sign up they much record there first name, surname and workgroup (and email - but that is also username)
   validates :first_name,  :presence => true
   validates :surname,  :presence => true
-  validates :workgroup, :presence => true
   validates :role_id,  :presence => true
 
         #This is temporary code to encrypt passwords - will be removed when all users are in database

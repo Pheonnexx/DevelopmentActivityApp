@@ -20,12 +20,8 @@ When(/^I enter the correct required information$/) do
   page.fill_in "First Name", :with => "Heather"
   page.fill_in "Surname", :with => "Poole"
   page.fill_in "Email", :with => "heather.poole@landregistry.gsi.gov.uk"
-  page.fill_in "Work Group", :with => "Testing"
   page.fill_in "Password", :with => "bananas1"
   page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Job Grade", :with => "RE2L"
-  page.fill_in "Location", :with => "IS"
-  page.fill_in "Team", :with => "Service Support"
 end
 
 When(/^choose to submit the information$/) do
@@ -39,12 +35,8 @@ end
 When(/^I enter all information but the first name$/) do
   page.fill_in "Surname", :with => "Poole"
   page.fill_in "Email", :with => "heather.poole@landregistry.gsi.gov.uk"
-  page.fill_in "Work Group", :with => "Testing"
   page.fill_in "Password", :with => "bananas1"
   page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Job Grade", :with => "RE2L"
-  page.fill_in "Location", :with => "IS"
-  page.fill_in "Team", :with => "Service Support"
 end
 
 When(/^I choose to submit the information$/) do
@@ -58,12 +50,8 @@ end
 When(/^I enter all information but the surname$/) do
   page.fill_in "First Name", :with => "Heather"
   page.fill_in "Email", :with => "heather.poole@landregistry.gsi.gov.uk"
-  page.fill_in "Work Group", :with => "Testing"
   page.fill_in "Password", :with => "bananas1"
   page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Job Grade", :with => "RE2L"
-  page.fill_in "Location", :with => "IS"
-  page.fill_in "Team", :with => "Service Support"
 end
 
 Then(/^I am prevented from signing up and a message tells me that my surname is missing$/) do
@@ -73,70 +61,16 @@ end
 When(/^I enter all information but the emal$/) do
   page.fill_in "First Name", :with => "Heather"
   page.fill_in "Surname", :with => "Poole"
-  page.fill_in "Work Group", :with => "Testing"
   page.fill_in "Password", :with => "bananas1"
   page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Job Grade", :with => "RE2L"
-  page.fill_in "Location", :with => "IS"
-  page.fill_in "Team", :with => "Service Support"
 end
 
 Then(/^I am prevented from signing up and a message tells me that my email is missing$/) do
   assert page.has_text?("Email can't be blank")
 end
 
-When(/^I enter all information but the work group$/) do
-  page.fill_in "First Name", :with => "Heather"
-  page.fill_in "Surname", :with => "Poole"
-  page.fill_in "Email", :with => "heather.poole@landregistry.gsi.gov.uk"
-  page.fill_in "Password", :with => "bananas1"
-  page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Job Grade", :with => "RE2L"
-  page.fill_in "Location", :with => "IS"
-  page.fill_in "Team", :with => "Service Support"
-end
-
-Then(/^I am prevented from signing up and a message tells me that my work group is missing$/) do
-  assert page.has_text?("Workgroup can't be blank")
-end
-
-When(/^I enter all information but the job grade$/) do
-  page.fill_in "First Name", :with => "Heather"
-  page.fill_in "Surname", :with => "Poole"
-  page.fill_in "Email", :with => "heather.poole@landregistry.gsi.gov.uk"
-  page.fill_in "Work Group", :with => "Testing"
-  page.fill_in "Password", :with => "bananas1"
-  page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Location", :with => "IS"
-  page.fill_in "Team", :with => "Service Support"
-end
-
 Then(/^I am signed in$/) do
   assert page.has_text?('Welcome! You have signed up successfully.')
-end
-
-When(/^I enter all information but the location$/) do
-  page.fill_in "First Name", :with => "Heather"
-  page.fill_in "Surname", :with => "Poole"
-  page.fill_in "Email", :with => "heather.poole@landregistry.gsi.gov.uk"
-  page.fill_in "Work Group", :with => "Testing"
-  page.fill_in "Password", :with => "bananas1"
-  page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Job Grade", :with => "RE2L"
-  page.fill_in "Team", :with => "Service Support"
-end
-
-
-When(/^I enter all information but the team$/) do
-  page.fill_in "First Name", :with => "Heather"
-  page.fill_in "Surname", :with => "Poole"
-  page.fill_in "Email", :with => "heather.poole@landregistry.gsi.gov.uk"
-  page.fill_in "Work Group", :with => "Testing"
-  page.fill_in "Password", :with => "bananas1"
-  page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Job Grade", :with => "RE2L"
-  page.fill_in "Location", :with => "IS"
-  #page.fill_in "Team", :with => "Service Support"
 end
 
 Given(/^that I have chosen to sign up$/) do
@@ -149,11 +83,8 @@ Given(/^I have entered all the needed details$/) do
   page.fill_in "First Name", :with => "Heather"
   page.fill_in "Surname", :with => "Poole"
   page.fill_in "Email", :with => "heather.poole@landregistry.gsi.gov.uk"
-  page.fill_in "Work Group", :with => "Testing"
   page.fill_in "Password", :with => "bananas1"
   page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Job Grade", :with => "RE2L"
-  page.fill_in "Location", :with => "IS"
 end
 
 When(/^I select the job role of "(.*?)"$/) do |job_role|

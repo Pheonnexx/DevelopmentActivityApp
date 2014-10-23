@@ -13,19 +13,19 @@
 		<table>
 			<tr>
 				<th>Activity Type</th>
+				<th>Development Subject</th>
 				<th>Date Completed</th>
 				<th>Time Taken</th>
 				<th>Key Learning Points</th>
-				<th>Notes</th>
 			</tr>
 
 			<% current_user.dev_activities.each do |dev_activity| %>
 			<tr>
-				<td><%= dev_activity.dev_type %> </td>
-				<td><%=  l dev_activity.activity_completed_at if dev_activity.activity_completed_at?  %></td>
+				<td><%= dev_activity.dev_type %></td>
+				<td><%= dev_activity.development_subject %></td>
+				<td><%= l dev_activity.activity_completed_at if dev_activity.activity_completed_at?  %></td>
 				<td><%= dev_activity.time_taken %></td>
 				<td><%= dev_activity.key_learning_point %></td>
-				<td><%= dev_activity.notes %></td>
 			</tr>
 			<% end %>
 				

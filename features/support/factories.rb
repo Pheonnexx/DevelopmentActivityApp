@@ -15,10 +15,6 @@ FactoryGirl.define do
   	f.id
   	f.first_name "Heather"
   	f.surname "Poole"
-  	f.workgroup "Test"
-    f.job_grade "RE2U"
-    f.location "IS"
-    f.team "Testing"
   	f.password "password1"
   	f.password_confirmation "password1"
     f.admin false
@@ -44,7 +40,12 @@ FactoryGirl.define do
     f.dev_type "Book"
     f.activity_completed_at "02/02/2012"
     f.time_taken "2.0"
-    f.notes "notes"
+    f.development_subject "Subject"
+    f.self_directed false
+  end
+
+  trait :self_directed do
+    self_directed true
   end
 
 end

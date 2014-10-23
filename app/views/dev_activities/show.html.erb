@@ -2,12 +2,22 @@
 <div class="outer-block">
   <div class="inner-block">
 
-	<h2>Dev Activity</h2>
+	<h2>Development Activity</h2>
 
 	<p>
   	<strong>Activity Type: </strong>
   	<%= @dev_activity.dev_type %>
 	</p>
+
+  <p>
+    <strong>Development Subject:</strong>
+    <%= @dev_activity.development_subject %>
+  </p>
+
+  <p>
+    <strong>Was this Self Directed Learning?:</strong>
+    <%= @dev_activity.self_directed %>
+  </p>
 
 	<p>
   	<strong>Completed On:</strong>
@@ -22,11 +32,9 @@
   <p>
     <strong>Key Learning Points:</strong>
     <%= @dev_activity.key_learning_point %>
+  </p>
 
-	<p>
-  	<strong>Notes:</strong>
-  	<%= @dev_activity.notes %>
-	</p>
+
 
   </div>
 </div>

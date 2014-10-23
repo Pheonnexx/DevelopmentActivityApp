@@ -53,7 +53,7 @@ When(/^she submits this$/) do
 end
 
 Then(/^it is saved$/) do
-  assert page.has_content?('Dev activity was successfully created.')
+  assert page.has_content?('The Development Activity was successfully created.')
 end
 
 Then(/^the activity is displayed to her$/) do
@@ -94,3 +94,14 @@ Then(/^the development activity is displayed without a key learning point$/) do
   assert page.has_content?('Key Learning Points:')
 end
 
+Given(/^she records "(.*?)" for the development subject$/) do |dev_subject|
+  page.fill_in "Development Subject", :with => dev_subject
+end
+
+Given(/^she records in Key Learning Points that it was "(.*?)"$/) do |key_learning_point|
+  page.fill_in "Key Learning Points", :with => key_learning_point
+end
+
+Given(/^she records that it was self directed learning$/) do
+  page.check("Was this Self Directed Learning?")
+end

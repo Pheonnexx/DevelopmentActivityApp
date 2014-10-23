@@ -49,7 +49,7 @@ th {
 }
 
 td {
-	padding: 5px 0;     /* 10px top & bottom padding, 0px left & right */
+	padding: 5px 0;     /* 5px top & bottom padding, 0px left & right */
     border-width: 1px 0 0 0; /*  1px top & bottom border,  0px left & right */
     border-color: #000;
     border-style: solid;
@@ -58,6 +58,11 @@ td {
 
 .form_field { 
 	@include core-19; 
+}
+
+.form_field_area {
+	@include core-19; 
+	width: 100%;
 }
 
 form, input, select, textarea { 

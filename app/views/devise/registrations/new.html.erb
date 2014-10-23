@@ -27,28 +27,8 @@
       </div>
 
       <div>
-        <%= f.label :job_grade, 'Job Grade' %><br />
-        <%= f.text_field :job_grade, class: "form_field"  %>
-      </div>
-
-      <div>
         <%= f.label :role_name, 'Job Role' %><br />
         <%= collection_select(:user, :role_id, Role.all, :id, :role_name) %>
-      </div>
-
-      <div>
-        <%= f.label :team %><br />
-        <%= f.text_field :team, class: "form_field"  %>
-      </div>
-
-      <div>
-        <%= f.label :workgroup, 'Work Group' %><br />
-        <%= f.text_field :workgroup, class: "form_field"  %>
-      </div>
-
-      <div>
-        <%= f.label :location %><br />
-        <%= f.text_field :location, class: "form_field"  %>
       </div>
 
       <div>

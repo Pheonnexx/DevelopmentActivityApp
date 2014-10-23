@@ -58,7 +58,3 @@ end
 When(/^I confirm that I want to delete them$/) do
   page.driver.browser.switch_to.alert.accept
 end
-
-Then(/^the user is no longer displayed$/) do
-  pending # express the regexp above with the code you wish you had
-end

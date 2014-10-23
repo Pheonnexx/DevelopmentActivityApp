@@ -14,12 +14,8 @@ When(/^I enter my details correctly$/) do
   page.fill_in "First Name", :with => "Heather"
   page.fill_in "Surname", :with => "Poole"
   page.fill_in "Email", :with => "heather.poole@landregistry.gsi.gov.uk"
-  page.fill_in "Work Group", :with => "Testing"
   page.fill_in "Password", :with => "bananas1"
   page.fill_in "Password Confirmation", :with => "bananas1"
-  page.fill_in "Job Grade", :with => "RE2L"
-  page.fill_in "Location", :with => "IS"
-  page.fill_in "Team", :with => "Service Support"
 end
 
 Given(/^that I am logged in as a Line Manager$/) do

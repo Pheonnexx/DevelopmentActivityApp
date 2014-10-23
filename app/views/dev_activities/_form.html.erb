@@ -21,6 +21,16 @@
   </div>
 
   <div>
+    <%= f.label :development_subject, 'Development Subject' %><br />
+    <%= f.text_field :development_subject, class: "form_field"  %>
+  </div>
+
+  <div>
+    <%= f.label :self_directed, 'Was this Self Directed Learning?' %><br />
+    <%= f.check_box :self_directed, class: "form_field"  %>
+  </div>
+
+  <div>
     <%= f.label :activity_completed_at, 'Date Completed' %><br />
     <%= f.text_field :activity_completed_at, class: "form_field"  %>
   </div>
@@ -32,12 +42,7 @@
 
   <div>
     <%= f.label :key_learning_point, 'Key Learning Points' %><br />
-    <%= f.text_area :key_learning_point, class: "form_field" %>
-  </div>
-
-  <div>
-    <%= f.label :notes, 'Notes' %><br />
-    <%= f.text_area :notes, class: "form_field"  %>
+    <%= f.text_area :key_learning_point, class: "form_field_area" %>
   </div>
 
   <div class="actions">
