@@ -1,6 +1,6 @@
 @US019
 
-Feature:
+Feature: Set when a skill was last used
 	As a User 
 	I want to say when I last used a skill 
 	So that I show how relevant it still is.

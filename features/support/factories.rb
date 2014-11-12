@@ -26,7 +26,7 @@ FactoryGirl.define do
     admin true
   end
 
-  trait :line_manager do
+  trait :set_line_manager do
     line_manager true
   end
 
@@ -53,11 +53,22 @@ end
 FactoryGirl.define do 
 
   factory :linemanager do |f|
+    f.id
     f.user_id "1"
   end
 
 end
 
+FactoryGirl.define do
+
+  factory :users_linemanager do |f|
+    f.id
+    f.user_id "1"
+    f.linemanager_id "1"
+  end
+
+end
+ 
 FactoryGirl.define do
 
   factory :skill do |f|

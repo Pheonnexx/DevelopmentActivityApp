@@ -20,6 +20,16 @@
   		<%= @user.email %>
 	  </p>
 
+    <p>
+      <strong>Linemanager:</strong>
+      <% @linemanaged_by = UsersLinemanager.find_by(:user_id => @user.id)%>
+      <% if @linemanaged_by%>
+      <% @linemanager = Linemanager.find_by(:user_id => @linemanaged_by.linemanager_id) %>
+      <%= "Linemanaged by #{@linemanager.user.first_name} #{@linemanager.user.surname}"  %>
+      <% else %>
+      <% end %>
+    </p>
+
     <% if current_user.id == @user.id %>
 
     <%= link_to "Edit Profile", edit_user_registration_path, class: "nav_button" %>

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :find_skills, only: [:show, :destroy]
   before_action :find_roles, only: [:show, :create, :edit]
-  before_action :set_linemanager, only: [:show, :edit, :update, :destroy]
+  #before_action :set_linemanager, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
 
   # GET /users
@@ -78,8 +78,11 @@ class UsersController < ApplicationController
     end
 
     def set_linemanager
-      @user1 = current_user
-      @linemanager = Linemanager.where("user_id = @user1.id")
+      @linemanaged_by = UsersLinemanager.find_by(:user_id => @user.id)
+      if @linemanaged_by
+        @linemanager = Linemanager.find_by(:user_id => @linemanaged_by.linemanager_id) 
+      else
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

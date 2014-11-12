@@ -8,7 +8,12 @@ Feature:	View own profile
 
 			Acceptance Criteria:
 			 - View all account details that are used in sign up (except password)
+			 	- Name
+			 	- Surname
+			 	- Job Role
+			 	- Email
 			 - View their recorded activities
+			 - Line Manager is displayed
 
 	Scenario: When I login I am given the option to view my profile
 		Given that "Sansa" is logged in 
@@ -24,3 +29,13 @@ Feature:	View own profile
 		And has created a dev activity for reading the "book" called "famous beheadings"
 		When he views his profile
 		Then he sees the dev activity for the book 
+
+@wip
+	Scenario: When I view my profile I can view my profile details correctly
+		Given that Hodor is linemanaged by "Bran" "Stark"
+		And Hodor logs in 
+		Then he will see his name "Hodor" displayed
+		And he will see his surname "Hodor" displayed
+		And he will see his Job Role "Hodor" displayed
+		And he will see his email "hodor@winteriscoming.com" displayed
+		And he will see that he is linemanaged by "Bran Stark"

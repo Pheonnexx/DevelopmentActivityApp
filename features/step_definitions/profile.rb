@@ -172,3 +172,45 @@ Then(/^I am informed that one of my passwords are incorrect\.$/) do
   assert page.has_text?("Password confirmation doesn't match Password")
 end
 
+Given(/^that Hodor is linemanaged by "(.*?)" "(.*?)"$/) do |first_name, surname|
+  @role = FactoryGirl.create(:role, :role_name => "Hodor")
+  @user = FactoryGirl.create(:user, :first_name => "Hodor", :surname => "Hodor", :role_id => @role.id, :email => "hodor@winteriscoming.com" )
+  @bran_manager = FactoryGirl.create(:user, :set_line_manager, :first_name => "Bran", :surname => "Stark", :role_id => @role.id)
+  visit_mainpage
+  page.click_link('Login')
+  page.fill_in "Email", :with => @bran_manager.email
+  page.fill_in "Password", :with => @bran_manager.password
+  page.click_button('Sign in')
+  page.click_link('Management Dashboard')
+  page.click_link('Add to Team')
+  page.fill_in "Search by Surname", :with => "Hodor"
+  page.click_button('Search')
+  ask('')
+  page.click_button("Linemanage")
+  ask('')
+  page.click_button("Logout")
+end
+
+Given(/^Hodor logs in$/) do
+  login
+end
+
+Then(/^he will see his name "(.*?)" displayed$/) do |name|
+  assert page.has_text?(name)
+end
+
+Then(/^he will see his surname "(.*?)" displayed$/) do |surname|
+  assert page.has_text?(surname)
+end
+
+Then(/^he will see his Job Role "(.*?)" displayed$/) do |job_role|
+  assert page.has_text?(job_role)
+end
+
+Then(/^he will see his email "(.*?)" displayed$/) do |email|
+  assert page.has_text?(email)
+end
+
+Then(/^he will see that he is linemanaged by "(.*?)"$/) do |linemanager|
+  assert page.has_text?(linemanager)
+end

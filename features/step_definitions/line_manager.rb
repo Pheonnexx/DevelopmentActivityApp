@@ -20,7 +20,7 @@ end
 
 Given(/^that I am logged in as a Line Manager$/) do
   @role = FactoryGirl.create(:role)
-  @user = FactoryGirl.create(:user, :line_manager, :role_id => @role.id)
+  @user = FactoryGirl.create(:user, :set_line_manager, :role_id => @role.id)
   @line_manager = FactoryGirl.create(:linemanager, :user_id => @user.id)
   login
 end
