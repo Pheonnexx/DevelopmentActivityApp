@@ -17,5 +17,5 @@ Feature: Select who you line manage
 		Given that I have chosen to sign up
 		When I enter my details correctly 
 		And select that I have Line Manager duties
-		When I select to sign up
+		When I select to sign up with these details
 		Then I am given access to the Management Dashboard

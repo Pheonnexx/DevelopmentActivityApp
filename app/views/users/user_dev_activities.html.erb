@@ -2,13 +2,25 @@
 <div class="outer-block">
     <div class="inner-block">
 
-		<h2>My Development Activities</h2>
+      <% if current_user == @user %>
+
+		<h2><%="My Development Activities"%>/h2>
 
 		<p>
-			<%= link_to('Add Development Activity', new_user_dev_activity_path(current_user), class: "nav_button") %>
+			<%= link_to('Add Development Activity', new_user_dev_activity_path(@user), class: "nav_button") %>
 
-			<%= link_to "My Skills", user_user_skills_path(current_user), class: "nav_button" %>
+			<%= link_to "My Skills", user_user_skills_path(@user), class: "nav_button" %>
 		</p>
+
+	  <% else %>
+
+	    <h2><%="#{@user.first_name} #{@user.surname}'s Development Activities"%></h2>
+
+		<p>
+			<%= link_to "#{@user.first_name} #{@user.surname}'s Skills", user_user_skills_path(@user), class: "nav_button" %>
+		</p>
+
+	  <% end %>
 
 		<table>
 			<tr>
@@ -19,7 +31,7 @@
 				<th>Key Learning Points</th>
 			</tr>
 
-			<% current_user.dev_activities.each do |dev_activity| %>
+			<% @user.dev_activities.each do |dev_activity| %>
 			<tr>
 				<td><%= dev_activity.dev_type %></td>
 				<td><%= dev_activity.development_subject %></td>

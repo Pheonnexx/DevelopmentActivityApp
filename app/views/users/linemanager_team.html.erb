@@ -1,0 +1,34 @@
+<div class="outer-block">
+  <div class="inner-block">
+
+    <h2>Your Team</h2>
+
+    <div id='linemanaged_team'>
+
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Job Role</th>
+            <th>Email</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @linemanaged_team1.each do |linemanaged_team| %>
+            <tr>
+              <td><%= linemanaged_team.first_name %></td>
+              <td><%= linemanaged_team.surname %></td>
+              <td><%= linemanaged_team.role.role_name %></td>
+              <td><%= linemanaged_team.email %></td>
+              <td><%= link_to 'View Profile', linemanaged_team, class: "nav_button" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

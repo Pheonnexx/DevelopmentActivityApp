@@ -6,6 +6,7 @@ class DevActivitiesController < ApplicationController
   # GET /dev_activities
   # GET /dev_activities.json
   def index
+    @user = User.find(params[:user_id])
     @dev_activities = DevActivity.all
   end
 
@@ -17,7 +18,8 @@ class DevActivitiesController < ApplicationController
 
   # GET /dev_activities/new
   def new
-    @dev_activity = DevActivity.new
+    @user = current_user
+    @dev_activity = @user.dev_activities.build
   end
 
   # GET /dev_activities/1/edit
@@ -32,7 +34,7 @@ class DevActivitiesController < ApplicationController
 
     respond_to do |format|
       if @dev_activity.save
-        format.html { redirect_to @dev_activity, notice: 'The Development Activity was successfully created.' }
+        format.html { redirect_to user_dev_activities_path(current_user), notice: 'The Development Activity was successfully created.' }
         format.json { render action: 'show', status: :created, location: @dev_activity }
       else
         format.html { render action: 'new' }
@@ -73,7 +75,7 @@ class DevActivitiesController < ApplicationController
 
     #Finds the current user if needed
     def set_user
-      @user = current_user
+      @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

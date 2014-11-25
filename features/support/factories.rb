@@ -30,10 +30,6 @@ FactoryGirl.define do
     line_manager true
   end
 
-end
-
-FactoryGirl.define do
-
   factory :dev_activity do |f|
     f.user_id "1"
     f.id
@@ -48,28 +44,15 @@ FactoryGirl.define do
     self_directed true
   end
 
-end
-
-FactoryGirl.define do 
-
   factory :linemanager do |f|
     f.id
     f.user_id "1"
   end
 
-end
-
-FactoryGirl.define do
-
   factory :users_linemanager do |f|
-    f.id
-    f.user_id "1"
-    f.linemanager_id "1"
+    association :user
+    association :linemanager
   end
-
-end
- 
-FactoryGirl.define do
 
   factory :skill do |f|
     f.id
@@ -78,21 +61,12 @@ FactoryGirl.define do
     f.skill_type "Non IT Technical Skills"
   end
 
-end
-
-FactoryGirl.define do
-
   factory :user_skill do |f|
-    f.id
-    f.skill_id "1"
+    association :user
+    association :skill
     f.skill_level "Basic"
-    f.user_id "1"
     f.date_last_used "0 - 6 Months"
   end
-
-end
-
-FactoryGirl.define do 
 
   factory :role do |f|
     f.id
@@ -100,14 +74,10 @@ FactoryGirl.define do
     f.role_description "Provides Quality Assurance"
   end
 
-end
-
-FactoryGirl.define do
-
   factory :role_skill do |f|
-    f.id
-    f.role_id "1"
-    f.skill_id "1"
+    association :role
+    association :skill
   end
 
 end
+

@@ -5,6 +5,8 @@ DevelopmentActivityApp::Application.routes.draw do
 
   resources :role_skills
 
+  resources :dev_activities
+
   resources :roles do 
     resources :role_skills
   end
@@ -12,8 +14,6 @@ DevelopmentActivityApp::Application.routes.draw do
   get "pages/AdminDashboard"
   get "pages/LineManagerDashboard"
   resources :skills
-
-  resources :dev_activities
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -23,13 +23,15 @@ DevelopmentActivityApp::Application.routes.draw do
 
   devise_for :users,
             :controllers => {:registrations => "my_devise/registrations"}
-
+  
   resources :users do
+    collection do
+      get 'linemanager_team'
+    end
     resources :dev_activities
-      collection do
-        get 'user_dev_activities'
-      end
+
     resources :user_skills
+
     resources :linemanagers
     resources :users_linemanagers do
         collection do
@@ -38,6 +40,7 @@ DevelopmentActivityApp::Application.routes.draw do
     end
     patch 'update_password', on: :collection
     get 'edit_password', on: :member
+
   end
 
 

@@ -11,6 +11,7 @@ Feature: Allow an Admin to add a job role
 	 - Role Name
 	 - Role Description
 
+@javascript
 	Scenario: Add a new role
 		Given that I am logged in as an admin
 		And I select to add a new role

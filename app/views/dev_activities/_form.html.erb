@@ -1,6 +1,6 @@
 <%#This is the form for adding/editing dev activities %>
 
-<%= form_for([current_user, @dev_activity]) do |f| %>
+<%= form_for([@user, @dev_activity]) do |f| %>
   
   <% if @dev_activity.errors.any? %>
     <div id="error_explanation">

@@ -1,27 +1,47 @@
-<%#Unlike user_dev_activities this lists all the dev activities regardless of what user they belong to - currently really doesnt display anything %>
+<%#This is the display of dev activities which appears on the user profile - uses the user id of the profile to pull the dev activities %>
+<div class="outer-block">
+    <div class="inner-block">
 
-<h1>Listing dev_activities</h1>
+    <% if current_user == @user %>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <h2><%="My Development Activities"%></h2>
 
-  <tbody>
-    <% @dev_activities.each do |dev_activity| %>
-      <tr>
-        <td><%= link_to 'Show', dev_activity %></td>
-        <td><%= link_to 'Edit', edit_dev_activity_path(dev_activity) %></td>
-        <td><%= link_to 'Destroy', dev_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <p>
+      <%= link_to('Add Development Activity', new_user_dev_activity_path(current_user), class: "nav_button") %>
+
+      <%= link_to "My Skills", user_user_skills_path(@user), class: "nav_button" %>
+    </p>
+
+    <% else %>
+
+      <h2><%="#{@user.first_name} #{@user.surname}'s Development Activities"%></h2>
+
+    <p>
+      <%= link_to "#{@user.first_name} #{@user.surname}'s Skills", user_user_skills_path(@user), class: "nav_button" %>
+    </p>
+
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <table>
+      <tr>
+        <th>Activity Type</th>
+        <th>Development Subject</th>
+        <th>Date Completed</th>
+        <th>Time Taken</th>
+        <th>Key Learning Points</th>
+      </tr>
 
-<%= link_to 'New Dev activity', new_dev_activity_path %>
+      <% @user.dev_activities.each do |dev_activity| %>
+      <tr>
+        <td><%= dev_activity.dev_type %></td>
+        <td><%= dev_activity.development_subject %></td>
+        <td><%= l dev_activity.activity_completed_at if dev_activity.activity_completed_at?  %></td>
+        <td><%= dev_activity.time_taken %></td>
+        <td><%= dev_activity.key_learning_point %></td>
+      </tr>
+      <% end %>
+        
+    </table>
+
+  </div>
+</div>

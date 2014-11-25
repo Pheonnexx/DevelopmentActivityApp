@@ -58,3 +58,19 @@ end
 When(/^I confirm that I want to delete them$/) do
   page.driver.browser.switch_to.alert.accept
 end
+
+When(/^I select to manage users and search for "(.*?)" "(.*?)"$/) do |firstname, surname|
+  @user1 = FactoryGirl.create(:user, :first_name => firstname, :surname => surname, :role_id => @role.id)
+  page.click_link('Admin Dashboard')
+  page.click_link('Manage Users')
+  page.fill_in 'Surname', :with => @user1.surname
+  page.click_button('Search')
+end
+
+When(/^select to view their profile$/) do
+  page.click_link('Profile')
+end
+
+Then(/^I am displayed the profile of "(.*?)" "(.*?)"$/) do |first_name, surname|
+  assert page.has_text?("#{first_name} #{surname}'s Profile")
+end

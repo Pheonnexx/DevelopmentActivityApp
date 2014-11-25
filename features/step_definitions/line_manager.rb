@@ -7,7 +7,7 @@ When(/^I have saved my changes$/) do
 end
 
 Then(/^I am given access to the Management Dashboard$/) do
-  page.has_link?('Management Dashboard')
+  assert page.has_link?('Line Management Dashboard')
 end
 
 When(/^I enter my details correctly$/) do
@@ -26,7 +26,7 @@ Given(/^that I am logged in as a Line Manager$/) do
 end
 
 When(/^I navigate to add someone to my team$/) do
-  page.click_link('Management Dashboard')
+  page.click_link('Line Management Dashboard')
   page.click_link('Add to Team')
 end
 
@@ -48,4 +48,46 @@ end
 
 Then(/^they are added to the team I line manage$/) do
   assert page.has_text?("Linemanaged by #{@user.first_name} #{@user.surname}")
+end
+
+Given(/^that I am logged in as a Line manager$/) do
+  @role = FactoryGirl.create(:role)
+  @user = FactoryGirl.create(:user, :set_line_manager, :role_id => @role.id)
+  @line_manager = FactoryGirl.create(:linemanager, :user_id => @user.id)
+  login
+end
+
+Given(/^I linemanage "(.*?)", "(.*?)" and "(.*?)"$/) do |name1, name2, name3|
+  @user1 = FactoryGirl.create(:user, :first_name => name1, :role_id => @role.id)
+  @user2 = FactoryGirl.create(:user, :first_name => name2, :role_id => @role.id)
+  @user3 = FactoryGirl.create(:user, :first_name => name3, :role_id => @role.id)
+  @set_user_lm1 = FactoryGirl.create(:users_linemanager, :user_id => @user1.id, :linemanager_id => @line_manager.id)
+  @set_user_lm2 = FactoryGirl.create(:users_linemanager, :user_id => @user2.id, :linemanager_id => @line_manager.id)
+  @set_user_lm3 = FactoryGirl.create(:users_linemanager, :user_id => @user3.id, :linemanager_id => @line_manager.id)
+end
+
+Given(/^that I have selected to view my team$/) do
+  page.click_link('Line Management Dashboard')
+  page.click_link('View My Team')
+end
+
+Then(/^I can see all three people that I linemanage$/) do
+  assert page.has_text?("#{@user1.first_name} #{@user1.surname}")
+  assert page.has_text?("#{@user2.first_name} #{@user2.surname}")
+  assert page.has_text?("#{@user3.first_name} #{@user3.surname}")
+end
+
+Given(/^I amd the linemanager of "(.*?)"$/) do |first_name|
+  @user1 = FactoryGirl.create(:user, :first_name => first_name, :role_id => @role.id)
+  @set_user_lm1 = FactoryGirl.create(:users_linemanager, :user_id => @user1.id, :linemanager_id => @line_manager.id)
+end
+
+When(/^I select to view his profile from the team list$/) do
+  page.click_link('Line Management Dashboard')
+  page.click_link('View My Team')
+  page.click_link('View Profile')
+end
+
+Then(/^his profile is displayed$/) do
+  pending # express the regexp above with the code you wish you had
 end

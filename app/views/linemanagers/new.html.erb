@@ -1,7 +1,7 @@
 <%= form_for @linemanager do |f| %>
-<%= f.hidden_field :line_manager_id, :value => current_user.id %>
-<%= f.hidden_field :user_id, :value => user.id %>
-<%= f.submit "Approve", class: "nav_button" %>
+	<%= f.hidden_field :line_manager_id, :value => current_user.id %>
+	<%= f.hidden_field :user_id, :value => user.id %>
+	<%= f.submit "Approve", class: "nav_button" %>
 <% end %>
 
 

@@ -17,7 +17,6 @@ gem 'passenger'
 #for the use of postgress
 gem 'pg'
 
-
 group :production do
   gem 'rails_12factor'
 end
@@ -34,12 +33,10 @@ gem 'coffee-rails', '~> 4.0.0'
 #for help with the forms
 gem 'cocoon'
 gem 'simple_form'
+
 #for help with search functions
 gem 'ransack'
 
-# deployment
-gem 'capistrano'
-gem 'capistrano-ext'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -76,23 +73,12 @@ group :test do
 end
 
 group :development, :test do
-gem 'foreman'
+  gem 'foreman'
 end
-
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'multi_json', '1.7.8'

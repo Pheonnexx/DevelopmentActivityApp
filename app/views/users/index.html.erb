@@ -4,13 +4,25 @@
 
     <h2>User Index</h2>
 
+      <%= search_form_for @search, url: users_path do |f| %>
+
+      <%= f.label :surname_cont, "Search by Surname" %>
+      <%= f.search_field :surname_cont %>
+
+      <%= f.label :first_name_cont, "Search by First Name" %>
+      <%= f.search_field :first_name_cont %>
+
+      <div class="actions"><%= f.submit "Search", class: "nav_button" %></div>
+
+    <% end %>
+
     <div id='users'>
 
       <table>
         <thead>
           <tr>
-            <th>First name</th>
-            <th>Surname</th>
+            <th><%= sort_link(@search, :first_name) %></th>
+            <th><%= sort_link(@search, :surname) %></th>
             <th>Job Role</th>
             <th>Email</th>
             <th></th>
@@ -25,7 +37,7 @@
               <td><%= user.surname %></td>
               <td><%= user.role.role_name %></td>
               <td><%= user.email %></td>
-              <td><%= link_to 'Show', user %></td>
+              <td><%= link_to 'Profile', user %></td>
               <td><%= button_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>

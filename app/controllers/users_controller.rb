@@ -7,13 +7,20 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @search = User.search(params[:q])
+    @users = @search.result #.includes(:user)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
     find_roles
+  end
+
+  def linemanager_team
+    @user = current_user 
+    @linemanager = Linemanager.find_by(:user_id => @user.id) 
+    @linemanaged_team1 = User.joins(:users_linemanagers).where('users_linemanagers.linemanager_id' => @linemanager.id).to_a
   end
 
   # GET /users/new

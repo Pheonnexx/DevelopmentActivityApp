@@ -118,3 +118,7 @@ Then(/^"(.*?)" is saved correctly in his profile$/) do |job_role|
   page.click_link('My Profile')
   assert page.has_content?(job_role)
 end
+
+When(/^I select to sign up with these details$/) do
+  page.click_button('Signup!')
+end

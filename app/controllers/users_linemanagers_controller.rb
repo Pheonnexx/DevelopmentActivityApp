@@ -1,5 +1,7 @@
 class UsersLinemanagersController < ApplicationController
-  before_action :set_users_linemanager, only: [:show, :edit, :update, :destroy]
+  #before_action :set_users_linemanager, only: [:show, :edit, :update, :destroy]
+  before_action :set_linemanager, only: [:index, :show]
+
 
   def user_search
     @search = User.search(params[:q])
@@ -9,7 +11,7 @@ class UsersLinemanagersController < ApplicationController
   # GET /users_linemanagers
   # GET /users_linemanagers.json
   def index
-    @users_linemanagers = UsersLinemanager.all
+    
   end
 
   # GET /users_linemanagers/1
@@ -72,6 +74,11 @@ class UsersLinemanagersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_users_linemanager
       @users_linemanager = UsersLinemanager.find(params[:id])
+    end
+
+    def set_linemanager
+      @user = current_user
+      @linemanager = Linemanager.where("user_id = @user.id")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -5,8 +5,8 @@ class UserSkillsController < ApplicationController
   # GET /user_skills
   # GET /user_skills.json
   def index
-    @user = current_user
-    @user_skills = @user.user_skills
+    @user = User.find(params[:user_id])
+    @user_skill = UserSkill.all
   end
 
   # GET /user_skills/1
