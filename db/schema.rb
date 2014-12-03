@@ -58,14 +58,17 @@ ActiveRecord::Schema.define(version: 20141022120817) do
     t.datetime "updated_at"
   end
 
-  create_table "user_skills", force: true do |t|
-    t.integer  "skill_id",       null: false
+  create_table "user_skills", id: false, force: true do |t|
     t.integer  "user_id",        null: false
+    t.integer  "skill_id",       null: false
     t.string   "skill_level",    null: false
+    t.string   "date_last_used"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "date_last_used"
   end
+
+  add_index "user_skills", ["skill_id"], name: "index_user_skills_on_skill_id", using: :btree
+  add_index "user_skills", ["user_id"], name: "index_user_skills_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name",                          null: false

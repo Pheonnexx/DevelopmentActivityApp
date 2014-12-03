@@ -11,6 +11,16 @@ class UsersController < ApplicationController
     @users = @search.result #.includes(:user)
   end
 
+  def linemanager_skill_search
+    @q = User.search(params[:q])
+    if params[:q]
+      @skill_id = params[:q]['user_skills_skill_id_eq']
+    else
+    end
+    @users = @q.result.includes(:user_skills, :skills) #.includes(:user)
+
+  end
+#@q = Site.joins(:site_management).where('site_managements.management_id' => @owner.id).search(params[:q])
   # GET /users/1
   # GET /users/1.json
   def show
@@ -20,7 +30,7 @@ class UsersController < ApplicationController
   def linemanager_team
     @user = current_user 
     @linemanager = Linemanager.find_by(:user_id => @user.id) 
-    @linemanaged_team1 = User.joins(:users_linemanagers).where('users_linemanagers.linemanager_id' => @linemanager.id).to_a
+    @linemanaged_team = User.joins(:users_linemanagers).where('users_linemanagers.linemanager_id' => @linemanager.id).to_a
   end
 
   # GET /users/new

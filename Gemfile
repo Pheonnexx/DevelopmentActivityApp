@@ -82,3 +82,5 @@ group :doc do
 end
 
 gem 'multi_json', '1.7.8'
+
+gem 'html-proofer'

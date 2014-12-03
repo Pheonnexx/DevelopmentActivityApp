@@ -1,0 +1,54 @@
+<div class="outer-block">
+  <div class="inner-block">    
+
+    <h2>linemanager skill search</h2>
+
+
+	<%= search_form_for @q , url: linemanager_skill_search_users_path do |f| %>
+
+	    <strong><%= f.label :user_skills_skill_id_eq, "Search by Skill" %></strong></br>
+	    <%= f.select :user_skills_skill_id_eq, options_from_collection_for_select(Skill.all, "id", "skill_name", @q.user_skills_skill_id_eq) %></br></br>
+	    
+	    <strong><%= f.label :user_skills_skill_level_eq, 'Required Skill Level' %></strong></br>
+		<% UserSkill::SKILL_LEVEL.each do |skill_level| %>		  
+		  <%= f.check_box(:user_skills_skill_level_cont_any, { :multiple => true }, skill_level, nil) %>
+		  <%= f.label :user_skills_skill_level_cont_any, skill_level %></br>
+		<% end %></br>
+		
+		<strong><%= f.label :user_skills_skill_level_eq, 'Date Last Used' %></strong></br>
+		<% UserSkill::SKILL_AGE.each do |skill_age| %>
+		  <%= f.check_box(:user_skills_date_last_used_cont_any, { :multiple => true }, skill_age, nil) %>
+		  <%= f.label :user_skills_date_last_used_cont_any, skill_age %></br>
+		<% end %>
+
+	    <div class="actions"><%= f.submit "Search", class: "nav_button" %></div>
+
+	<% end %></br>
+
+	  <table>
+        <thead>
+          <tr>
+            <th><%= sort_link(@q, :first_name) %></th>
+            <th><%= sort_link(@q, :surname) %></th>
+            <th>Proficiency</th>
+            <th>Date Last Used</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+
+          	<% @skill2 = UserSkill.find_by(:skill_id => @skill_id, :user_id => user.id)  %>
+            <tr>
+              <td><%= user.first_name %></td>
+              <td><%= user.surname %></td>
+              <td><%= @skill2.skill_level if @skill2 %></td>
+              <td><%= @skill2.date_last_used if @skill2 %></td>
+            </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+
+  </div>
+</div>

@@ -25,19 +25,24 @@ DevelopmentActivityApp::Application.routes.draw do
             :controllers => {:registrations => "my_devise/registrations"}
   
   resources :users do
+
     collection do
       get 'linemanager_team'
+      match 'linemanager_skill_search' => 'users#linemanager_skill_search', via: [:get, :post], as: :linemanager_skill_search
     end
+
     resources :dev_activities
 
     resources :user_skills
 
     resources :linemanagers
+
     resources :users_linemanagers do
         collection do
           get 'user_search'
         end
     end
+
     patch 'update_password', on: :collection
     get 'edit_password', on: :member
 
