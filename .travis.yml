@@ -9,9 +9,15 @@ addons:
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
+    - "rake db:migrate"
 
 deploy:
   provider: heroku
   api_key: "6dac3bdb-8c39-4df2-be63-134767edd589"
   app: cryptic-forest-1170
   run: "rake db:migrate"
+
+postgres:
+  adapter: postgresql
+  database: myapp_test
+  username: postgres
