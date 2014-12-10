@@ -9,7 +9,7 @@ DevelopmentActivityApp::Application.routes.draw do
 
   resources :dev_activities
 
-  resources :roles do
+  resources :roles do 
     resources :role_skills
   end
 
@@ -17,7 +17,7 @@ DevelopmentActivityApp::Application.routes.draw do
 
   get "pages/AdminDashboard"
   get "pages/LineManagerDashboard"
-  
+
   resources :skills
 
   # The priority is based upon order of creation: first created -> highest priority.
