@@ -1,0 +1,6 @@
+language: ruby
+
+deploy:
+  provider: heroku
+  api_key: "6dac3bdb-8c39-4df2-be63-134767edd589"
+  run: "rake db:migrate"

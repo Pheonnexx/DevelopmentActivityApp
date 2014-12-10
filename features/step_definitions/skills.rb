@@ -82,3 +82,31 @@ Given(/^that I have chosen to add a new skill$/) do
   page.click_link('My Skills')
   page.click_link('Add Skill')
 end
+
+When(/^I enter the role group name and description$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Given(/^there are three skill groups held in the app for "(.*?)", "(.*?)" and "(.*?)"$/) do |arg1, arg2, arg3|
+  pending # express the regexp above with the code you wish you had
+end
+
+Given(/^that I have chosen to create a job group$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I have entered the role group details$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I select the the skill group "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I select to create the new role group$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^it is successfully saved alongside the associated skill groups$/) do
+  pending # express the regexp above with the code you wish you had
+end

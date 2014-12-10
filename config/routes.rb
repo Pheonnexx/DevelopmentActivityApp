@@ -1,13 +1,15 @@
 DevelopmentActivityApp::Application.routes.draw do
 
 
-  resources :users_linemanagers  
+  resources :skill_groups
+
+  resources :users_linemanagers
 
   resources :role_skills
 
   resources :dev_activities
 
-  resources :roles do 
+  resources :roles do
     resources :role_skills
   end
 
@@ -15,6 +17,7 @@ DevelopmentActivityApp::Application.routes.draw do
 
   get "pages/AdminDashboard"
   get "pages/LineManagerDashboard"
+  
   resources :skills
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -25,7 +28,7 @@ DevelopmentActivityApp::Application.routes.draw do
 
   devise_for :users,
             :controllers => {:registrations => "my_devise/registrations"}
-  
+
   resources :users do
 
     collection do
@@ -87,7 +90,7 @@ DevelopmentActivityApp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
