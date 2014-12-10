@@ -482,25 +482,7 @@
         });
       }
     }()),
-    checkScroll: function(){
-      var cachedScrollTop = $(window).scrollTop();
-      if ((cachedScrollTop < (stopScrollingAtFooter.cachedScrollTop + 2)) && (cachedScrollTop > (stopScrollingAtFooter.cachedScrollTop - 2))) {
-        stopScrollingAtFooter.stopPolling();
-        return;
-      } else {
-        stopScrollingAtFooter.cachedScrollTop = cachedScrollTop;
-      }
 
-      $.each(stopScrollingAtFooter._els, function(i, el){
-        var bottomOfEl = cachedScrollTop + el.height;
-
-        if (bottomOfEl > stopScrollingAtFooter.footerTop){
-          stopScrollingAtFooter.stick(el);
-        } else {
-          stopScrollingAtFooter.unstick(el);
-        }
-      });
-    },
     stick: function(el){
       if(el.state === 'fixed' && el.$fixedEl.css('position') === 'fixed'){
         el.$fixedEl.css({ 'position': 'absolute', 'top': stopScrollingAtFooter.footerTop - el.fixedTop });

@@ -43,7 +43,6 @@ Given(/^I am currently on the admin dashboard$/) do
 end
 
 Given(/^that I select to manage users$/) do
-  create_generic_user
   page.click_link('Manage Users')
 end
 
@@ -56,7 +55,7 @@ When(/^I select to delete a user$/) do
 end
 
 When(/^I confirm that I want to delete them$/) do
-  page.driver.browser.switch_to.alert.accept
+  page.driver.accept_js_confirms!
 end
 
 When(/^I select to manage users and search for "(.*?)" "(.*?)"$/) do |firstname, surname|
@@ -73,4 +72,23 @@ end
 
 Then(/^I am displayed the profile of "(.*?)" "(.*?)"$/) do |first_name, surname|
   assert page.has_text?("#{first_name} #{surname}'s Profile")
+end
+
+Given(/^I search for the user 'Rose'$/) do
+  @user2 = FactoryGirl.create(:user, :first_name => "Rose", :role_id => @role.id)
+  page.fill_in 'First Name', :with => @user2.first_name
+  page.click_button('Search')
+end
+
+Then(/^the user is no longer displayed$/) do
+  page.should_not have_text(@user2.first_name)
+end
+
+Then(/^there should be no delete option for myself$/) do
+  page.should_not have_button('Delete')
+end
+
+Given(/^I search for myself$/) do
+  page.fill_in 'First Name', :with => @user.first_name
+  page.click_button('Search')
 end

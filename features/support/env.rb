@@ -15,14 +15,16 @@ Around('@email') do |scenario, block|
   block.call
 end
 
-Capybara.javascript_driver = :selenium
+require 'capybara/poltergeist'
+#Capybara.javascript_driver = :poltergeist
 
-Capybara.register_driver :chrome do |app|
- require 'selenium/webdriver'
- Capybara::Selenium::Driver.new(app, :browser => :chrome)
+Capybara.javascript_driver = :webkit
+
+Capybara.register_driver :poltergeist do |app|
+ Capybara::Poltergeist::Driver.new(app, :js_errors => false)
 end
 
-Capybara.current_driver = :chrome
+#Capybara.current_driver = :chrome
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any

@@ -1,3 +1,6 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
 <div class="outer-block">
   <div class="inner-block">    
 
@@ -6,24 +9,24 @@
 
 	<%= search_form_for @q , url: linemanager_skill_search_users_path do |f| %>
 
-	    <strong><%= f.label :user_skills_skill_id_eq, "Search by Skill" %></strong></br>
-	    <%= f.select :user_skills_skill_id_eq, options_from_collection_for_select(Skill.all, "id", "skill_name", @q.user_skills_skill_id_eq) %></br></br>
+	    <strong><%= f.label :user_skills_skill_id_eq, "Search by Skill" %></strong><br>
+	    <%= f.select :user_skills_skill_id_eq, options_from_collection_for_select(Skill.all, "id", "skill_name", @q.user_skills_skill_id_eq) %><br><br>
 	    
-	    <strong><%= f.label :user_skills_skill_level_eq, 'Required Skill Level' %></strong></br>
+	    <strong><%= f.label :user_skills_skill_level_eq, 'Required Skill Level' %></strong><br>
 		<% UserSkill::SKILL_LEVEL.each do |skill_level| %>		  
 		  <%= f.check_box(:user_skills_skill_level_cont_any, { :multiple => true }, skill_level, nil) %>
-		  <%= f.label :user_skills_skill_level_cont_any, skill_level %></br>
-		<% end %></br>
+		  <%= f.label :user_skills_skill_level_cont_any, skill_level %><br>
+		<% end %><br>
 		
-		<strong><%= f.label :user_skills_skill_level_eq, 'Date Last Used' %></strong></br>
+		<strong><%= f.label :user_skills_skill_level_eq, 'Date Last Used' %></strong><br>
 		<% UserSkill::SKILL_AGE.each do |skill_age| %>
 		  <%= f.check_box(:user_skills_date_last_used_cont_any, { :multiple => true }, skill_age, nil) %>
-		  <%= f.label :user_skills_date_last_used_cont_any, skill_age %></br>
+		  <%= f.label :user_skills_date_last_used_cont_any, skill_age %><br>
 		<% end %>
 
 	    <div class="actions"><%= f.submit "Search", class: "nav_button" %></div>
 
-	<% end %></br>
+	<% end %><br>
 
 	  <table>
         <thead>
@@ -52,3 +55,4 @@
 
   </div>
 </div>
+</html>

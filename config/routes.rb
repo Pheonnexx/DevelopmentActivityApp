@@ -11,6 +11,8 @@ DevelopmentActivityApp::Application.routes.draw do
     resources :role_skills
   end
 
+  resources :user_skills
+
   get "pages/AdminDashboard"
   get "pages/LineManagerDashboard"
   resources :skills

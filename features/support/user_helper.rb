@@ -16,7 +16,6 @@ module UserHelper
     within(:xpath, '//*[@id="users"]/table/tbody/tr[1]') do
       click_button('Delete')
     end
-    ask('')
   end
 
   def create_generic_user

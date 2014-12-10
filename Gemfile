@@ -40,6 +40,8 @@ gem 'ransack'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'jquery-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -70,6 +72,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'pry'
   gem 'capybara-webkit'
+  gem 'poltergeist'
 end
 
 group :development, :test do

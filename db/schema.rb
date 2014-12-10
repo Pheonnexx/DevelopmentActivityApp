@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 20141022120817) do
     t.datetime "updated_at"
   end
 
-  create_table "user_skills", id: false, force: true do |t|
-    t.integer  "user_id",        null: false
-    t.integer  "skill_id",       null: false
+  create_table "user_skills", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "skill_id"
     t.string   "skill_level",    null: false
     t.string   "date_last_used"
     t.datetime "created_at"

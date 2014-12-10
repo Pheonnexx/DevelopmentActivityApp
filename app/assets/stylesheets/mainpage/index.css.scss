@@ -17,12 +17,7 @@
   background-repeat: no-repeat;
 }
 
-h1 {
-	@include heading-80;
-	font-weight:bold;
-}
-
-h2 {
+h1, h2 {
 	@include heading-48;
 	font-weight:bold;
 	border-bottom: solid $purple-50 10px

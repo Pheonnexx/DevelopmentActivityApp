@@ -1,61 +1,67 @@
 <%#This is the header that displays across the entire application %>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <%#This links all the stylesheets, these affect the whole app %>
+<head>  
+  <title>TRILL</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%# javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+
 <div class="outer-block">
   <div class="inner-block">
-    <div class='app_header'>
-      <head>
-        <title>DevelopmentActivityApp</title>
-        <%#This links all the stylesheets, these affect the whole app %>
- 
-        <%= stylesheet_link_tag    "application" %>
-        <%= javascript_include_tag "application" %>
-        <%= csrf_meta_tag %>
 
+      <body>
       <%#This is the alpha header - to be changed or deleted according to the stage of the project %>
-      <div class="phase-banner">
-        <p>
-          <strong class="phase-tag">ALPHA</strong>
-          <span>This is a new service – your <a href="mailto:heather.poole@landregistry.gsi.gov.uk">feedback</a> will help us to improve it.</span>
-        </p>
-      </div>
-
-      <%#This is the toolbar which is contained in the header - when signed in as a normal user my profile and sign out are displayed, if the user is admin they will be displayed a link to admin dashboard and if they are a linemanager then they will be displayed linemanager dashboard.  When the user is not currently logged in they are displayed the login and signup button %>
-      <div id="top_nav_bar">
-          
-        <% if user_signed_in? %>
-
-          <%= link_to('My Profile', user_path(current_user), class: "nav_button") %>
-
-            <% if current_user.line_manager? %>
-
-              <%= link_to('Line Management Dashboard', pages_LineManagerDashboard_path, class: "nav_button") %>
-
-            <% end %>
-
-            <% if current_user.admin? %>
-
-              <%= link_to('Admin Dashboard', pages_AdminDashboard_path, class: "nav_button") %>
-
-            <% end %>
-
-            <div class="logout">
-                <%= button_to('Logout', destroy_user_session_path, method: :delete, class: "nav_button") %>
+      
+        <header>
+          <div class='app_header'>
+  
+            <div class="phase-banner">
+              <p>
+                <strong class="phase-tag">ALPHA</strong>
+                <span>This is a new service – your <a href="mailto:heather.poole@landregistry.gsi.gov.uk">feedback</a> will help us to improve it.</span>
+              </p>
             </div>
 
-        <% else %>
+          <%#This is the toolbar which is contained in the header - when signed in as a normal user my profile and sign out are displayed, if the user is admin they will be displayed a link to admin dashboard and if they are a linemanager then they will be displayed linemanager dashboard.  When the user is not currently logged in they are displayed the login and signup button %>
+            <div id="top_nav_bar">
+                
+              <% if user_signed_in? %>
 
-            <%= link_to('Login', new_user_session_path, class: "nav_button") %>
+                <%= link_to('My Profile', user_path(current_user), class: "nav_button") %>
 
-            <%= link_to "Signup", new_user_registration_path, class: "nav_button" %>
-    
-        <% end %>
+                  <% if current_user.line_manager? %>
 
-      </div>
+                    <%= link_to('Line Management Dashboard', pages_LineManagerDashboard_path, class: "nav_button") %>
 
-      </head>
-    </div>
+                  <% end %>
+
+                  <% if current_user.admin? %>
+
+                    <%= link_to('Admin Dashboard', pages_AdminDashboard_path, class: "nav_button") %>
+
+                  <% end %>
+
+                  <div class="logout">
+                      <%= button_to('Logout', destroy_user_session_path, method: :delete, class: "nav_button") %>
+                  </div>
+
+              <% else %>
+
+                  <%= link_to('Login', new_user_session_path, class: "nav_button") %>
+
+                  <%= link_to "Signup", new_user_registration_path, class: "nav_button" %>
+          
+              <% end %>
+
+            </div>
+
+          </div>
+
+        </header>
 
 <%#This is where all the successful and unsuccessful alerts are displayed %>
     <% if notice %>
@@ -64,12 +70,11 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-  </div>
-</div>
-    <body>
 
     <%= yield %>
-
     </body>
+    
+  </div>
+</div>
 
 </html>
