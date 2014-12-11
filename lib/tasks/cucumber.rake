@@ -12,7 +12,11 @@ $LOAD_PATH.unshift(File.dirname(vendored_cucumber_bin) + '/../lib') unless vendo
 
 begin
   require 'cucumber/rake/task'
-
+  namespace :manual
+    Cucumber::Rake::Task.new do |t|
+      t.cucumber_opts = %w{--tags ~@manual}
+    end
+  end
   namespace :cucumber do
     Cucumber::Rake::Task.new({:ok => 'test:prepare'}, 'Run features that should pass') do |t|
       t.binary = vendored_cucumber_bin # If nil, the gem's binary is used.
@@ -44,7 +48,7 @@ begin
   desc 'Alias for cucumber:ok'
   task :cucumber => 'cucumber:ok'
 
-  task :default => :cucumber
+  task :default => :manual
 
   task :features => :cucumber do
     STDERR.puts "*** The 'features' task is deprecated. See rake -T cucumber ***"
