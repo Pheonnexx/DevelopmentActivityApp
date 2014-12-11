@@ -15,6 +15,16 @@ begin
   namespace :manual
     Cucumber::Rake::Task.new do |t|
       t.cucumber_opts = %w{--tags ~@manual}
+      t.profile = 'default'
+    end
+
+    desc 'Run all features'
+    #task :all => [:ok, :wip]
+
+    task :statsetup do
+      require 'rails/code_statistics'
+      ::STATS_DIRECTORIES << %w(Cucumber\ features features) if File.exist?('features')
+      ::CodeStatistics::TEST_TYPES << "Cucumber features" if File.exist?('features')
     end
   end
   namespace :cucumber do
@@ -62,6 +72,9 @@ begin
 rescue LoadError
   desc 'cucumber rake task not available (cucumber not installed)'
   task :cucumber do
+    abort 'Cucumber rake task is not available. Be sure to install cucumber as a gem or plugin'
+  end
+  task :manual do
     abort 'Cucumber rake task is not available. Be sure to install cucumber as a gem or plugin'
   end
 end
