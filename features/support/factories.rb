@@ -2,13 +2,13 @@ require 'factory_girl'
 
 FactoryGirl.define do
 
-  sequence :email do |n| 
+  sequence :email do |n|
     "email#{n}@factory.com"
-  end 
+  end
 
-  sequence :id do |n| 
+  sequence :id do |n|
     "#{n}"
-  end 
+  end
 
   factory :user do |f|
   	f.email
@@ -20,6 +20,7 @@ FactoryGirl.define do
     f.admin false
     f.line_manager false
     f.role_id "1"
+    f.sign_in_count "1"
   end
 
   trait :admin do
@@ -80,4 +81,3 @@ FactoryGirl.define do
   end
 
 end
-

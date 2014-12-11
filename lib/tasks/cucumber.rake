@@ -39,8 +39,8 @@ begin
     end
 
     desc 'Run all features'
-    #task :all => [:ok, :wip]
     task :all => [:travis]
+
 
     task :statsetup do
       require 'rails/code_statistics'

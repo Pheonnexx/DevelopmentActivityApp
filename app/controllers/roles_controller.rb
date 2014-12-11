@@ -17,7 +17,6 @@ class RolesController < ApplicationController
   def new
     @role = Role.new
     @role.role_skills.build 
-  
   end
 
   # GET /roles/1/edit
