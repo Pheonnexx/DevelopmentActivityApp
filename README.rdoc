@@ -1,6 +1,6 @@
 == README
 
-# Current State
+= Current State
 
 This project is kept archived as an example of my first Rails app.
 
