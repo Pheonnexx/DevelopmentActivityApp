@@ -1,28 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Current State
 
-Things you may want to cover:
+This project is kept archived as an example of my first Rails app.
 
-* Ruby version
+TRILL as seen here was a prototype that I used to start learning to code in Ruby in the Rails framework.  It was presented to my work as something that could be built to help record the training and skills of people in the workplace.  It was taken in and developed in python, but unfortunately I was on another project.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I like keeping my old work around, it serves as good reminder of my developing skills and how I have moved forward.
